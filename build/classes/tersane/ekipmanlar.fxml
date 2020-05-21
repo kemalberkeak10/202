@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tersane.EkipmanlarController">
+   <children>
+      <AnchorPane id="AnchorPane" layoutX="10.0" layoutY="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <BorderPane>
+                     <left>
+                        <HBox style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
+                           <children>
+                              <VBox onMouseClicked="#show_personeller" prefHeight="720.0" prefWidth="400.0" style="-fx-background-color: #ffffff;">
+                                 <children>
+                                    <ImageView fitHeight="240.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@app/icon/its-logo2.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <HBox prefHeight="100.0" prefWidth="400.0">
+                                       <children>
+                                          <Button fx:id="anasayfa_button" mnemonicParsing="false" onAction="#show_anasayfa" prefHeight="100.0" prefWidth="400.0" style="-fx-background-color: #d81d23;" styleClass="hover-hand" stylesheets="@app.tersane/newCascadeStyleSheet.css" text="ANASAYFA" textAlignment="CENTER" textFill="WHITE">
+                                             <graphic>
+                                                <ImageView fx:id="anamenu" fitHeight="88.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true" translateX="-50.0">
+                                                   <image>
+                                                      <Image url="@app/icon/home%20(1).png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <font>
+                                                <Font size="22.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="100.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="400.0">
+                                       <children>
+                                          <Button fx:id="projeler_button" mnemonicParsing="false" onAction="#show_projeler" prefHeight="100.0" prefWidth="400.0" style="-fx-background-color: #d81d23;" text="PROJELER" textAlignment="CENTER" textFill="WHITE">
+                                             <graphic>
+                                                <ImageView fitHeight="88.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true" translateX="-50.0">
+                                                   <image>
+                                                      <Image url="@app/icon/project%20(1).png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <font>
+                                                <Font size="22.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="400.0">
+                                       <children>
+                                          <Button fx:id="ekipmanlar_button" mnemonicParsing="false" onAction="#show_ekipmanlar" prefHeight="100.0" prefWidth="400.0" style="-fx-background-color: #d81d23;" text="EKİPMANLAR" textAlignment="CENTER" textFill="WHITE">
+                                             <graphic>
+                                                <ImageView fitHeight="88.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true" translateX="-30.0">
+                                                   <image>
+                                                      <Image url="@app/icon/support.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <font>
+                                                <Font size="22.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                    <HBox>
+                                       <children>
+                                          <Button fx:id="raporlar_button" mnemonicParsing="false" onAction="#show_raporlar" prefHeight="100.0" prefWidth="400.0" style="-fx-background-color: #d81d23;" styleClass="hover-hand" stylesheets="@app.tersane/newCascadeStyleSheet.css" text="  RAPORLAR" textAlignment="RIGHT" textFill="WHITE">
+                                             <graphic>
+                                                <ImageView fitHeight="88.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true" translateX="-40.0">
+                                                   <image>
+                                                      <Image url="@app/icon/score.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <font>
+                                                <Font size="21.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="400.0" VBox.vgrow="ALWAYS">
+                                       <children>
+                                          <Button fx:id="personeller_button" mnemonicParsing="false" onAction="#show_personeller" prefHeight="100.0" prefWidth="400.0" style="-fx-background-color: #d81d23;" styleClass="hover-hand" stylesheets="@app.tersane/newCascadeStyleSheet.css" text="PERSONELLER" textAlignment="CENTER" textFill="WHITE">
+                                             <graphic>
+                                                <ImageView fitHeight="88.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true" translateX="-40.0">
+                                                   <image>
+                                                      <Image url="@app/icon/manager.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <font>
+                                                <Font size="22.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </left>
+                  </BorderPane>
+               </children>
+            </AnchorPane>
+            <VBox alignment="CENTER" layoutX="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="400.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Button fx:id="ekipman_button" mnemonicParsing="false" prefHeight="25.0" prefWidth="190.0" text="EKİPMAN BİLGİLERİNİ GÖSTER" />
+                  <ImageView fitHeight="776.0" fitWidth="900.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@app/icon/34321414_213813292568117_4674803436175228928_o.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets top="170.0" />
+                     </VBox.margin>
+                  </ImageView>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

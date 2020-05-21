@@ -1,0 +1,80 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 27.Nis.2020, 22:06:50
+    Author     : Toshiba
+*/
+
+.table-row-cell:selected .table-cell {
+    -fx-background-color: #D81D23;
+    -fx-text-fill: #FFFFFF ;
+}
+.fn-14{
+    -fx-font-size:16px;
+}
+.fn-16{
+    
+    -fx-font-size:14px;
+}
+
+.fn-24{
+    
+    -fx-font-size:24px;
+}
+
+.fn-32{
+    
+    -fx-font-size:32px;
+}
+.fn-48{
+    
+    -fx-font-size:48px;
+}
+.fn-64{
+    
+    -fx-font-size:64px;
+}
+
+.txt-center{
+    -fx-text-alignment:center; 
+}
+.txt-justify{
+    -fx-text-alignment:justify; 
+}
+
+.txt-left{
+    -fx-text-alignment:left; 
+}
+.txt-right{
+    -fx-text-alignment:right; 
+}
+
+    
+
+
+.fill-red{
+    -fx-fill: #D81D23;
+    -fx-text-fill: #D81D23;
+}
+.fill-backgroundred{
+    -fx-background-color: #D81D23;
+}
+    
+
+
+.fill-dark{
+    -fx-fill: #4f5d55;
+    -fx-text-fill: #4f5d55; 
+    
+}
+.fill-white {
+    -fx-fill: #ffffff;
+    -fx-text-fill: #ffffff; 
+}
+.hover-hand{
+    
+    -fx-cursor:hand;
+}
