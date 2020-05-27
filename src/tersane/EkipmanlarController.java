@@ -29,8 +29,6 @@ public class EkipmanlarController implements Initializable {
     @FXML
     private Button anasayfa_button;
     @FXML
-    private ImageView anamenu;
-    @FXML
     private Button projeler_button;
     @FXML
     private Button ekipmanlar_button;
@@ -40,6 +38,10 @@ public class EkipmanlarController implements Initializable {
     private Button personeller_button;
     @FXML
     private Button ekipman_button;
+    @FXML
+    private Button müsteriler_button;
+    @FXML
+    private Button yüzeyler_button;
 
     /**
      * Initializes the controller class.
@@ -49,7 +51,8 @@ public class EkipmanlarController implements Initializable {
         // TODO
     }    
 
- @FXML
+
+    @FXML
     private void show_anasayfa(ActionEvent event) {
          if(event.getSource()== anasayfa_button){
             try{
@@ -130,9 +133,9 @@ public class EkipmanlarController implements Initializable {
         }
     }
 
-    
+   
 
-    @FXML
+ @FXML
     private void show_personeller(ActionEvent event) {
         if(event.getSource()== personeller_button){
             try{
@@ -153,14 +156,47 @@ public class EkipmanlarController implements Initializable {
         
     }
 
-   /* @FXML
-    private void show_personeller(MouseEvent event) {
-    }
-   */
 
-    /*@FXML
-    private void show_personeller(MouseEvent event) {
+ 
+
+    @FXML
+    private void show_müsteriler(ActionEvent event) {
+        if(event.getSource()== müsteriler_button){
+            try{
+                Node node=(Node) event.getSource();
+                Stage stage=(Stage) node.getScene().getWindow();
+                stage.close();
+                
+
+                Scene scene=new Scene(FXMLLoader.load(getClass().getResource("müsteriler.fxml")));
+                stage.setScene(scene);
+                stage.show();
+
+
+            }catch(IOException e){
+                System.err.println(e.getMessage());
+            }
+        }
     }
-  */
+
+    @FXML
+    private void show_yüzeyler(ActionEvent event) {
+        if(event.getSource()== yüzeyler_button){
+            try{
+                Node node=(Node) event.getSource();
+                Stage stage=(Stage) node.getScene().getWindow();
+                stage.close();
+                
+
+                Scene scene=new Scene(FXMLLoader.load(getClass().getResource("yüzeyler.fxml")));
+                stage.setScene(scene);
+                stage.show();
+
+
+            }catch(IOException e){
+                System.err.println(e.getMessage());
+            }
+        }
+    }
     
 }

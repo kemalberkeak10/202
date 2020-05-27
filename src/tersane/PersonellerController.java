@@ -38,17 +38,10 @@ import static tersane.database.con;
  */
 public class PersonellerController implements Initializable {
 
-    @FXML
     private Button anasayfa_button;
-    @FXML
-    private ImageView anamenu;
-    @FXML
     private Button projeler_button;
-    @FXML
     private Button ekipmanlar_button;
-    @FXML
     private Button raporlar_button;
-    @FXML
     private Button personeller_button;
     @FXML
     private TextField persid;
@@ -77,6 +70,20 @@ public class PersonellerController implements Initializable {
     private ObservableList<personel>data;
     @FXML
     private Button personel_göster;
+    @FXML
+    private Button anasayfa_button1;
+    @FXML
+    private Button müsteriler_button;
+    @FXML
+    private Button projeler_button1;
+    @FXML
+    private Button yüzeyler_button;
+    @FXML
+    private Button ekipmanlar_button1;
+    @FXML
+    private Button raporlar_button1;
+    @FXML
+    private Button personeller_button1;
 
     /**
      * Initializes the controller class.
@@ -107,7 +114,8 @@ public class PersonellerController implements Initializable {
 
 
    
-     @FXML
+    
+    @FXML
     private void show_anasayfa(ActionEvent event) {
          if(event.getSource()== anasayfa_button){
             try{
@@ -190,7 +198,7 @@ public class PersonellerController implements Initializable {
 
    
 
-@FXML
+ @FXML
     private void show_personeller(ActionEvent event) {
         if(event.getSource()== personeller_button){
             try{
@@ -209,6 +217,49 @@ public class PersonellerController implements Initializable {
             }
         }
         
+    }
+
+
+ 
+
+    @FXML
+    private void show_müsteriler(ActionEvent event) {
+        if(event.getSource()== müsteriler_button){
+            try{
+                Node node=(Node) event.getSource();
+                Stage stage=(Stage) node.getScene().getWindow();
+                stage.close();
+                
+
+                Scene scene=new Scene(FXMLLoader.load(getClass().getResource("müsteriler.fxml")));
+                stage.setScene(scene);
+                stage.show();
+
+
+            }catch(IOException e){
+                System.err.println(e.getMessage());
+            }
+        }
+    }
+
+    @FXML
+    private void show_yüzeyler(ActionEvent event) {
+        if(event.getSource()== yüzeyler_button){
+            try{
+                Node node=(Node) event.getSource();
+                Stage stage=(Stage) node.getScene().getWindow();
+                stage.close();
+                
+
+                Scene scene=new Scene(FXMLLoader.load(getClass().getResource("yüzeyler.fxml")));
+                stage.setScene(scene);
+                stage.show();
+
+
+            }catch(IOException e){
+                System.err.println(e.getMessage());
+            }
+        }
     }
 
     @FXML
@@ -276,6 +327,7 @@ public class PersonellerController implements Initializable {
         personeller_table.setItems(null);
         personeller_table.setItems(data);
     }
-    
+
+ 
     
 }

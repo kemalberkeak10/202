@@ -10,28 +10,28 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tersane.FXMLDocumentController">
+<AnchorPane id="AnchorPane" maxHeight="720.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tersane.FXMLDocumentController">
    <children>
-      <AnchorPane style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="720.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <BorderPane>
+            <BorderPane maxHeight="720.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="776.0" AnchorPane.topAnchor="0.0">
                <left>
-                  <HBox style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
+                  <HBox maxHeight="720.0" prefHeight="720.0" prefWidth="400.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
                      <children>
-                        <VBox onMouseClicked="#show_personeller" prefHeight="720.0" prefWidth="400.0" style="-fx-background-color: #ffffff;">
+                        <VBox prefWidth="405.0" style="-fx-background-color: #ffffff;">
                            <children>
-                              <ImageView fitHeight="240.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="240.0" fitWidth="420.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@app/icon/its-logo2.jpg" />
                                  </image>
                               </ImageView>
-                              <HBox prefHeight="100.0" prefWidth="400.0">
+                              <HBox prefHeight="80.0" prefWidth="350.0">
                                  <children>
-                                    <Button fx:id="anasayfa_button" mnemonicParsing="false" onAction="#show_anasayfa" prefHeight="100.0" prefWidth="400.0" style="-fx-background-color: #d81d23;" styleClass="hover-hand" stylesheets="@app.tersane/newCascadeStyleSheet.css" text="ANASAYFA" textAlignment="CENTER" textFill="WHITE">
+                                    <Button fx:id="anasayfa_button" mnemonicParsing="false" onAction="#show_anasayfa" prefHeight="80.0" prefWidth="375.0" style="-fx-background-color: #d81d23;" styleClass="hover-hand" stylesheets="@app.tersane/newCascadeStyleSheet.css" text="ANASAYFA" textAlignment="CENTER" textFill="WHITE">
                                        <graphic>
-                                          <ImageView fitHeight="88.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true" translateX="-50.0">
+                                          <ImageView fitHeight="65.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" translateX="-50.0">
                                              <image>
-                                                <Image url="@app/icon/home%20(1).png" />
+                                                <Image url="@app/icon/home%20(6).png" />
                                              </image>
                                           </ImageView>
                                        </graphic>
@@ -44,14 +44,30 @@
                                     </Button>
                                  </children>
                                  <VBox.margin>
-                                    <Insets top="100.0" />
+                                    <Insets top="80.0" />
                                  </VBox.margin>
                               </HBox>
-                              <HBox prefHeight="100.0" prefWidth="400.0">
+                              <HBox prefHeight="80.0" prefWidth="350.0">
                                  <children>
-                                    <Button fx:id="projeler_button" mnemonicParsing="false" onAction="#show_projeler" prefHeight="100.0" prefWidth="400.0" style="-fx-background-color: #d81d23;" text="PROJELER" textAlignment="CENTER" textFill="WHITE">
+                                    <Button fx:id="müsteriler_button" mnemonicParsing="false" onAction="#show_müsteriler" prefHeight="80.0" prefWidth="375.0" style="-fx-background-color: #d81d23;" styleClass="hover-hand" stylesheets="@app.tersane/newCascadeStyleSheet.css" text="MÜŞTERİLER" textAlignment="CENTER" textFill="WHITE">
                                        <graphic>
-                                          <ImageView fitHeight="88.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true" translateX="-50.0">
+                                          <ImageView fitHeight="65.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" translateX="-50.0">
+                                             <image>
+                                                <Image url="@app/icon/müşteri.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <font>
+                                          <Font size="22.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="80.0" prefWidth="350.0">
+                                 <children>
+                                    <Button fx:id="projeler_button" mnemonicParsing="false" onAction="#show_projeler" prefHeight="80.0" prefWidth="375.0" style="-fx-background-color: #d81d23;" styleClass="hover-hand" stylesheets="@app.tersane/newCascadeStyleSheet.css" text="PROJELER" textAlignment="CENTER" textFill="WHITE">
+                                       <graphic>
+                                          <ImageView fitHeight="65.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" translateX="-60.0">
                                              <image>
                                                 <Image url="@app/icon/project%20(1).png" />
                                              </image>
@@ -66,11 +82,27 @@
                                     </Button>
                                  </children>
                               </HBox>
-                              <HBox prefHeight="100.0" prefWidth="400.0">
+                              <HBox prefHeight="80.0" prefWidth="350.0">
                                  <children>
-                                    <Button fx:id="ekipmanlar_button" mnemonicParsing="false" onAction="#show_ekipmanlar" prefHeight="100.0" prefWidth="400.0" style="-fx-background-color: #d81d23;" text="EKİPMANLAR" textAlignment="CENTER" textFill="WHITE">
+                                    <Button fx:id="yüzeyler_button" mnemonicParsing="false" onAction="#show_yüzeyler" prefHeight="80.0" prefWidth="375.0" style="-fx-background-color: #d81d23;" styleClass="hover-hand" stylesheets="@app.tersane/newCascadeStyleSheet.css" text="YÜZEY DURUMLARI" textAlignment="CENTER" textFill="WHITE">
                                        <graphic>
-                                          <ImageView fitHeight="88.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true" translateX="-30.0">
+                                          <ImageView fitHeight="65.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" translateX="-10.0">
+                                             <image>
+                                                <Image url="@app/icon/objective%20(1).png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <font>
+                                          <Font size="22.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="80.0" prefWidth="350.0">
+                                 <children>
+                                    <Button fx:id="ekipmanlar_button" mnemonicParsing="false" onAction="#show_ekipmanlar" prefHeight="100.0" prefWidth="375.0" style="-fx-background-color: #d81d23;" styleClass="hover-hand" stylesheets="@app.tersane/newCascadeStyleSheet.css" text="EKİPMANLAR" textAlignment="CENTER" textFill="WHITE">
+                                       <graphic>
+                                          <ImageView fitHeight="65.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" translateX="-40.0">
                                              <image>
                                                 <Image url="@app/icon/support.png" />
                                              </image>
@@ -85,11 +117,11 @@
                                     </Button>
                                  </children>
                               </HBox>
-                              <HBox>
+                              <HBox prefHeight="80.0" prefWidth="350.0">
                                  <children>
-                                    <Button fx:id="raporlar_button" mnemonicParsing="false" onAction="#show_raporlar" prefHeight="100.0" prefWidth="400.0" style="-fx-background-color: #d81d23;" styleClass="hover-hand" stylesheets="@app.tersane/newCascadeStyleSheet.css" text="  RAPORLAR" textAlignment="RIGHT" textFill="WHITE">
+                                    <Button fx:id="raporlar_button" mnemonicParsing="false" onAction="#show_raporlar" prefHeight="100.0" prefWidth="375.0" style="-fx-background-color: #d81d23;" styleClass="hover-hand" stylesheets="@app.tersane/newCascadeStyleSheet.css" text="  RAPORLAR" textAlignment="RIGHT" textFill="WHITE">
                                        <graphic>
-                                          <ImageView fitHeight="88.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true" translateX="-40.0">
+                                          <ImageView fitHeight="65.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" translateX="-40.0">
                                              <image>
                                                 <Image url="@app/icon/score.png" />
                                              </image>
@@ -101,11 +133,11 @@
                                     </Button>
                                  </children>
                               </HBox>
-                              <HBox prefHeight="100.0" prefWidth="400.0" VBox.vgrow="ALWAYS">
+                              <HBox prefHeight="80.0" prefWidth="350.0" VBox.vgrow="ALWAYS">
                                  <children>
-                                    <Button fx:id="personeller_button" mnemonicParsing="false" onAction="#show_personeller" prefHeight="100.0" prefWidth="400.0" style="-fx-background-color: #d81d23;" styleClass="hover-hand" stylesheets="@app.tersane/newCascadeStyleSheet.css" text="PERSONELLER" textAlignment="CENTER" textFill="WHITE">
+                                    <Button fx:id="personeller_button" mnemonicParsing="false" onAction="#show_personeller" prefHeight="80.0" prefWidth="375.0" style="-fx-background-color: #d81d23;" styleClass="hover-hand" stylesheets="@app.tersane/newCascadeStyleSheet.css" text="PERSONELLER" textAlignment="CENTER" textFill="WHITE">
                                        <graphic>
-                                          <ImageView fitHeight="88.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true" translateX="-40.0">
+                                          <ImageView fitHeight="65.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" translateX="-40.0" translateY="-2.0">
                                              <image>
                                                 <Image url="@app/icon/manager.png" />
                                              </image>
@@ -125,11 +157,11 @@
             </BorderPane>
          </children>
       </AnchorPane>
-      <VBox alignment="CENTER" layoutX="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="400.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox alignment="CENTER" layoutX="400.0" prefWidth="350.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="400.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <ImageView fitHeight="776.0" fitWidth="900.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@app/icon/34321414_213813292568117_4674803436175228928_o.png" />
+                  <Image url="@app/icon/logo.png" />
                </image>
                <VBox.margin>
                   <Insets top="170.0" />

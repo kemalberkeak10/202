@@ -15,8 +15,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 /**
@@ -24,24 +22,24 @@ import javafx.stage.Stage;
  *
  * @author Toshiba
  */
-public class RaporlarController implements Initializable {
+public class MüsterilerController implements Initializable {
 
     @FXML
     private Button anasayfa_button;
     @FXML
+    private Button müsteriler_button;
+    @FXML
     private Button projeler_button;
+    @FXML
+    private Button yüzeyler_button;
     @FXML
     private Button ekipmanlar_button;
     @FXML
     private Button raporlar_button;
     @FXML
     private Button personeller_button;
-    @FXML
-    private Button rekle_button;
-    @FXML
-    private Button müsteriler_button;
-    @FXML
-    private Button yüzeyler_button;
+   
+
 
     /**
      * Initializes the controller class.
@@ -50,8 +48,7 @@ public class RaporlarController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-    
-   
+
     @FXML
     private void show_anasayfa(ActionEvent event) {
          if(event.getSource()== anasayfa_button){
@@ -159,25 +156,7 @@ public class RaporlarController implements Initializable {
 
  
 
-    @FXML
-    private void show_müsteriler(ActionEvent event) {
-        if(event.getSource()== müsteriler_button){
-            try{
-                Node node=(Node) event.getSource();
-                Stage stage=(Stage) node.getScene().getWindow();
-                stage.close();
-                
-
-                Scene scene=new Scene(FXMLLoader.load(getClass().getResource("müsteriler.fxml")));
-                stage.setScene(scene);
-                stage.show();
-
-
-            }catch(IOException e){
-                System.err.println(e.getMessage());
-            }
-        }
-    }
+ 
 
     @FXML
     private void show_yüzeyler(ActionEvent event) {
@@ -200,15 +179,15 @@ public class RaporlarController implements Initializable {
     }
 
     @FXML
-    private void rapor_ekle(ActionEvent event) {
-        if(event.getSource()== rekle_button){
+    private void show_müsteriler(ActionEvent event) {
+        if(event.getSource()== müsteriler_button){
             try{
                 Node node=(Node) event.getSource();
                 Stage stage=(Stage) node.getScene().getWindow();
                 stage.close();
                 
 
-                Scene scene=new Scene(FXMLLoader.load(getClass().getResource("raporekipman.fxml")));
+                Scene scene=new Scene(FXMLLoader.load(getClass().getResource("müsteriler.fxml")));
                 stage.setScene(scene);
                 stage.show();
 

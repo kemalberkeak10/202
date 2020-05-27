@@ -9,7 +9,6 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -18,234 +17,275 @@
    <children>
       <AnchorPane layoutX="20.0" layoutY="20.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <BorderPane>
-               <left>
-                  <HBox style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
+            <HBox style="-fx-background-color: #ffffff;">
+               <children>
+                  <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity">
                      <children>
-                        <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity">
+                        <VBox prefHeight="720.0" prefWidth="400.0" style="-fx-background-color: #ffffff;">
                            <children>
-                              <VBox prefHeight="720.0" prefWidth="400.0" style="-fx-background-color: #ffffff;">
+                              <ImageView fitHeight="240.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@app/icon/its-logo2.jpg" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="720.0" prefWidth="400.0" stylesheets="@app.tersane/newCascadeStyleSheet.css">
+                           <children>
+                              <TextField fx:id="persid" alignment="CENTER" prefHeight="80.0" prefWidth="400.0" promptText="ID" style="-fx-background-color: #FFFFFF; -fx-border-color: #D81D23; -fx-border-width: 10;" styleClass="fill-red" stylesheets="@../../../proje/src/proje/css/newCascadeStyleSheet.css">
+                                 <font>
+                                    <Font size="32.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="persad" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="80.0" prefWidth="400.0" promptText="AD" style="-fx-background-color: #FFFFFF; -fx-border-color: #D81D23; -fx-border-width: 10;" styleClass="fill-red" stylesheets="@../../../proje/src/proje/css/newCascadeStyleSheet.css">
+                                 <font>
+                                    <Font size="32.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="perssoy" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="80.0" prefWidth="400.0" promptText="SOYAD" style="-fx-background-color: #FFFFFF; -fx-border-color: #D81D23; -fx-border-width: 10;" styleClass="fill-red" stylesheets="@../../../proje/src/proje/css/newCascadeStyleSheet.css">
+                                 <font>
+                                    <Font size="32.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="perlev" alignment="CENTER" layoutX="10.0" layoutY="264.0" prefHeight="80.0" prefWidth="400.0" promptText="LEVEL" style="-fx-background-color: #FFFFFF; -fx-border-color: #D81D23; -fx-border-width: 10;" styleClass="fill-red" stylesheets="@../../../proje/src/proje/css/newCascadeStyleSheet.css">
+                                 <font>
+                                    <Font size="32.0" />
+                                 </font>
+                              </TextField>
+                              <VBox>
                                  <children>
-                                    <ImageView fitHeight="240.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@app/icon/its-logo2.jpg" />
-                                       </image>
-                                    </ImageView>
-                                    <HBox prefHeight="100.0" prefWidth="400.0">
-                                       <children>
-                                          <Button fx:id="anasayfa_button" mnemonicParsing="false" onAction="#show_anasayfa" prefHeight="100.0" prefWidth="400.0" style="-fx-background-color: #d81d23;" styleClass="hover-hand" stylesheets="@app.tersane/newCascadeStyleSheet.css" text="ANASAYFA" textAlignment="CENTER" textFill="WHITE">
-                                             <graphic>
-                                                <ImageView fx:id="anamenu" fitHeight="88.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true" translateX="-50.0">
-                                                   <image>
-                                                      <Image url="@app/icon/home%20(1).png" />
-                                                   </image>
-                                                </ImageView>
-                                             </graphic>
-                                             <font>
-                                                <Font size="22.0" />
-                                             </font>
-                                             <HBox.margin>
-                                                <Insets />
-                                             </HBox.margin>
-                                          </Button>
-                                       </children>
+                                    <Button fx:id="personel_ekle" alignment="CENTER" mnemonicParsing="false" onAction="#personel_ekle" prefHeight="80.0" prefWidth="401.0" style="-fx-background-color: #D81D23; -fx-border-color: #FFFFFF;" styleClass="hover-hand" stylesheets="@app.tersane/newCascadeStyleSheet.css" text="PERSONEL EKLE" textFill="WHITE">
+                                       <graphic>
+                                          <ImageView fitHeight="73.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" translateX="-30.0" translateY="6.0">
+                                             <image>
+                                                <Image url="@app/icon/add-user.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <padding>
+                                          <Insets top="-10.0" />
+                                       </padding>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="80.0">
+                                 <children>
+                                    <Button fx:id="personel_sil" alignment="CENTER" mnemonicParsing="false" onAction="#personel_sil" prefHeight="80.0" prefWidth="400.0" style="-fx-background-color: #D81D23; -fx-border-color: #FFFFFF;" styleClass="hover-hand" stylesheets="@app.tersane/newCascadeStyleSheet.css" text="PERSONEL SİL" textFill="WHITE">
+                                       <graphic>
+                                          <ImageView fitHeight="73.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" translateX="-40.0" translateY="5.0">
+                                             <image>
+                                                <Image url="@app/icon/remove-user.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
                                        <VBox.margin>
-                                          <Insets top="100.0" />
+                                          <Insets />
                                        </VBox.margin>
-                                    </HBox>
-                                    <HBox prefHeight="100.0" prefWidth="400.0">
-                                       <children>
-                                          <Button fx:id="projeler_button" mnemonicParsing="false" onAction="#show_projeler" prefHeight="100.0" prefWidth="400.0" style="-fx-background-color: #d81d23;" text="PROJELER" textAlignment="CENTER" textFill="WHITE">
-                                             <graphic>
-                                                <ImageView fitHeight="88.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true" translateX="-50.0">
-                                                   <image>
-                                                      <Image url="@app/icon/project%20(1).png" />
-                                                   </image>
-                                                </ImageView>
-                                             </graphic>
-                                             <font>
-                                                <Font size="22.0" />
-                                             </font>
-                                             <HBox.margin>
-                                                <Insets />
-                                             </HBox.margin>
-                                          </Button>
-                                       </children>
-                                    </HBox>
-                                    <HBox prefHeight="100.0" prefWidth="400.0">
-                                       <children>
-                                          <Button fx:id="ekipmanlar_button" mnemonicParsing="false" onAction="#show_ekipmanlar" prefHeight="100.0" prefWidth="400.0" style="-fx-background-color: #d81d23;" text="EKİPMANLAR" textAlignment="CENTER" textFill="WHITE">
-                                             <graphic>
-                                                <ImageView fitHeight="88.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true" translateX="-30.0">
-                                                   <image>
-                                                      <Image url="@app/icon/support.png" />
-                                                   </image>
-                                                </ImageView>
-                                             </graphic>
-                                             <font>
-                                                <Font size="22.0" />
-                                             </font>
-                                             <HBox.margin>
-                                                <Insets />
-                                             </HBox.margin>
-                                          </Button>
-                                       </children>
-                                    </HBox>
-                                    <HBox>
-                                       <children>
-                                          <Button fx:id="raporlar_button" mnemonicParsing="false" onAction="#show_raporlar" prefHeight="100.0" prefWidth="400.0" style="-fx-background-color: #d81d23;" styleClass="hover-hand" stylesheets="@app.tersane/newCascadeStyleSheet.css" text="  RAPORLAR" textAlignment="RIGHT" textFill="WHITE">
-                                             <graphic>
-                                                <ImageView fitHeight="88.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true" translateX="-40.0">
-                                                   <image>
-                                                      <Image url="@app/icon/score.png" />
-                                                   </image>
-                                                </ImageView>
-                                             </graphic>
-                                             <font>
-                                                <Font size="21.0" />
-                                             </font>
-                                          </Button>
-                                       </children>
-                                    </HBox>
-                                    <HBox prefHeight="100.0" prefWidth="400.0" VBox.vgrow="ALWAYS">
-                                       <children>
-                                          <Button fx:id="personeller_button" mnemonicParsing="false" onAction="#show_personeller" prefHeight="100.0" prefWidth="400.0" style="-fx-background-color: #d81d23;" styleClass="hover-hand" stylesheets="@app.tersane/newCascadeStyleSheet.css" text="PERSONELLER" textAlignment="CENTER" textFill="WHITE">
-                                             <graphic>
-                                                <ImageView fitHeight="88.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true" translateX="-40.0">
-                                                   <image>
-                                                      <Image url="@app/icon/manager.png" />
-                                                   </image>
-                                                </ImageView>
-                                             </graphic>
-                                             <font>
-                                                <Font size="22.0" />
-                                             </font>
-                                          </Button>
-                                       </children>
-                                    </HBox>
+                                       <padding>
+                                          <Insets top="-10.0" />
+                                       </padding>
+                                    </Button>
                                  </children>
-                              </VBox>
-                              <VBox prefHeight="720.0" prefWidth="400.0" stylesheets="@app.tersane/newCascadeStyleSheet.css">
-                                 <children>
-                                    <TextField fx:id="persid" alignment="CENTER" prefHeight="80.0" prefWidth="400.0" promptText="ID" style="-fx-background-color: #FFFFFF; -fx-border-color: #D81D23; -fx-border-width: 10;" styleClass="fill-red" stylesheets="@../../../proje/src/proje/css/newCascadeStyleSheet.css">
-                                       <font>
-                                          <Font size="32.0" />
-                                       </font>
-                                    </TextField>
-                                    <TextField fx:id="persad" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="80.0" prefWidth="400.0" promptText="AD" style="-fx-background-color: #FFFFFF; -fx-border-color: #D81D23; -fx-border-width: 10;" styleClass="fill-red" stylesheets="@../../../proje/src/proje/css/newCascadeStyleSheet.css">
-                                       <font>
-                                          <Font size="32.0" />
-                                       </font>
-                                    </TextField>
-                                    <TextField fx:id="perssoy" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="80.0" prefWidth="400.0" promptText="SOYAD" style="-fx-background-color: #FFFFFF; -fx-border-color: #D81D23; -fx-border-width: 10;" styleClass="fill-red" stylesheets="@../../../proje/src/proje/css/newCascadeStyleSheet.css">
-                                       <font>
-                                          <Font size="32.0" />
-                                       </font>
-                                    </TextField>
-                                    <TextField fx:id="perlev" alignment="CENTER" layoutX="10.0" layoutY="264.0" prefHeight="80.0" prefWidth="400.0" promptText="LEVEL" style="-fx-background-color: #FFFFFF; -fx-border-color: #D81D23; -fx-border-width: 10;" styleClass="fill-red" stylesheets="@../../../proje/src/proje/css/newCascadeStyleSheet.css">
-                                       <font>
-                                          <Font size="32.0" />
-                                       </font>
-                                    </TextField>
-                                    <VBox>
-                                       <children>
-                                          <Button fx:id="personel_ekle" alignment="CENTER" mnemonicParsing="false" onAction="#personel_ekle" prefHeight="80.0" prefWidth="401.0" style="-fx-background-color: #D81D23; -fx-border-color: #FFFFFF;" styleClass="hover-hand" stylesheets="@app.tersane/newCascadeStyleSheet.css" text="PERSONEL EKLE" textFill="WHITE">
-                                             <graphic>
-                                                <ImageView fitHeight="73.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" translateX="-30.0" translateY="6.0">
-                                                   <image>
-                                                      <Image url="@app/icon/add-user%20(1).png" />
-                                                   </image>
-                                                </ImageView>
-                                             </graphic>
-                                             <padding>
-                                                <Insets top="-10.0" />
-                                             </padding>
-                                          </Button>
-                                       </children>
-                                    </VBox>
-                                    <VBox prefHeight="80.0">
-                                       <children>
-                                          <Button fx:id="personel_sil" alignment="CENTER" mnemonicParsing="false" onAction="#personel_sil" prefHeight="80.0" prefWidth="400.0" style="-fx-background-color: #D81D23; -fx-border-color: #FFFFFF;" styleClass="hover-hand" stylesheets="@app.tersane/newCascadeStyleSheet.css" text="PERSONEL SİL" textFill="WHITE">
-                                             <graphic>
-                                                <ImageView fitHeight="73.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" translateX="-40.0" translateY="5.0">
-                                                   <image>
-                                                      <Image url="@app/icon/remove-user.png" />
-                                                   </image>
-                                                </ImageView>
-                                             </graphic>
-                                             <VBox.margin>
-                                                <Insets />
-                                             </VBox.margin>
-                                             <padding>
-                                                <Insets top="-10.0" />
-                                             </padding>
-                                          </Button>
-                                       </children>
-                                    </VBox>
-                                 </children>
-                                 <HBox.margin>
-                                    <Insets top="165.0" />
-                                 </HBox.margin>
-                              </VBox>
-                              <VBox alignment="TOP_CENTER" prefHeight="720.0" prefWidth="400.0" styleClass="hover-hand" stylesheets="@app.tersane/newCascadeStyleSheet.css">
-                                 <children>
-                                    <TableView fx:id="personeller_table" editable="true" prefHeight="355.0" prefWidth="400.0" style="-fx-border-color: #D81D23; -fx-border-width: 10;" stylesheets="@../../../proje/src/proje/css/newCascadeStyleSheet.css">
-                                       <columns>
-                                          <TableColumn fx:id="pers_ID" prefWidth="52.0" text="ID" />
-                                          <TableColumn fx:id="pers_AD" prefWidth="169.0" text="AD" />
-                                          <TableColumn fx:id="pers_SOYAD" prefWidth="105.0" text="SOYAD" />
-                                          <TableColumn fx:id="pers_LEVEL" prefWidth="73.0" text="LEVEL" />
-                                       </columns>
-                                    </TableView>
-                                    <VBox>
-                                       <children>
-                                          <Button fx:id="personel_düzenle" mnemonicParsing="false" onAction="#personel_düzenle" prefHeight="80.0" prefWidth="400.0" style="-fx-border-color: #ffffff;" stylesheets="@app.tersane/newCascadeStyleSheet.css" text="PERSONEL DÜZENLE" textFill="WHITE" translateY="-3.0">
-                                             <graphic>
-                                                <ImageView fitHeight="73.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" translateX="-30.0" translateY="3.0">
-                                                   <image>
-                                                      <Image url="@app/icon/user.png" />
-                                                   </image>
-                                                </ImageView>
-                                             </graphic>
-                                             <styleClass>
-                                                <String fx:value="hover-hand" />
-                                                <String fx:value="fill-backgroundred" />
-                                                <String fx:value="fill-white" />
-                                             </styleClass>
-                                             <padding>
-                                                <Insets top="3.0" />
-                                             </padding>
-                                          </Button>
-                                       </children>
-                                    </VBox>
-                                    <VBox>
-                                       <children>
-                                          <Button fx:id="personel_göster" mnemonicParsing="false" onAction="#personel_göster" prefHeight="80.0" prefWidth="400.0" styleClass="fill-backgroundred" text="PERSONELLERİ GÖSTER" textFill="WHITE">
-                                             <graphic>
-                                                <ImageView fitHeight="73.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" translateX="-25.0" translateY="3.0">
-                                                   <image>
-                                                      <Image url="@app/icon/user%20(1).png" />
-                                                   </image>
-                                                </ImageView>
-                                             </graphic>
-                                             <padding>
-                                                <Insets top="1.0" />
-                                             </padding>
-                                          </Button>
-                                       </children>
-                                    </VBox>
-                                 </children>
-                                 <HBox.margin>
-                                    <Insets top="165.0" />
-                                 </HBox.margin>
                               </VBox>
                            </children>
-                        </HBox>
+                           <HBox.margin>
+                              <Insets top="165.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <VBox alignment="TOP_CENTER" prefHeight="720.0" prefWidth="400.0" styleClass="hover-hand" stylesheets="@app.tersane/newCascadeStyleSheet.css">
+                           <children>
+                              <TableView fx:id="personeller_table" editable="true" prefHeight="355.0" prefWidth="400.0" style="-fx-border-color: #D81D23; -fx-border-width: 10;" stylesheets="@../../../proje/src/proje/css/newCascadeStyleSheet.css">
+                                 <columns>
+                                    <TableColumn fx:id="pers_ID" prefWidth="52.0" text="ID" />
+                                    <TableColumn fx:id="pers_AD" prefWidth="169.0" text="AD" />
+                                    <TableColumn fx:id="pers_SOYAD" prefWidth="105.0" text="SOYAD" />
+                                    <TableColumn fx:id="pers_LEVEL" prefWidth="73.0" text="LEVEL" />
+                                 </columns>
+                              </TableView>
+                              <VBox>
+                                 <children>
+                                    <Button fx:id="personel_düzenle" mnemonicParsing="false" onAction="#personel_düzenle" prefHeight="80.0" prefWidth="400.0" style="-fx-border-color: #ffffff;" stylesheets="@app.tersane/newCascadeStyleSheet.css" text="PERSONEL DÜZENLE" textFill="WHITE" translateY="-3.0">
+                                       <graphic>
+                                          <ImageView fitHeight="73.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" translateX="-30.0" translateY="3.0">
+                                             <image>
+                                                <Image url="@app/icon/user.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <styleClass>
+                                          <String fx:value="hover-hand" />
+                                          <String fx:value="fill-backgroundred" />
+                                          <String fx:value="fill-white" />
+                                       </styleClass>
+                                       <padding>
+                                          <Insets top="3.0" />
+                                       </padding>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                              <VBox>
+                                 <children>
+                                    <Button fx:id="personel_göster" mnemonicParsing="false" onAction="#personel_göster" prefHeight="80.0" prefWidth="400.0" styleClass="fill-backgroundred" text="PERSONELLERİ GÖSTER" textFill="WHITE">
+                                       <graphic>
+                                          <ImageView fitHeight="73.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" translateX="-25.0" translateY="3.0">
+                                             <image>
+                                                <Image url="@app/icon/user%20(1).png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                       <padding>
+                                          <Insets top="1.0" />
+                                       </padding>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                           </children>
+                           <HBox.margin>
+                              <Insets top="165.0" />
+                           </HBox.margin>
+                        </VBox>
                      </children>
                   </HBox>
-               </left>
-            </BorderPane>
+               </children>
+            </HBox>
          </children>
       </AnchorPane>
+      <HBox layoutX="10.0" layoutY="10.0" maxHeight="720.0" prefHeight="720.0" prefWidth="400.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <VBox prefWidth="405.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <ImageView fitHeight="240.0" fitWidth="420.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@app/icon/its-logo2.jpg" />
+                     </image>
+                  </ImageView>
+                  <HBox prefHeight="80.0" prefWidth="350.0">
+                     <children>
+                        <Button fx:id="anasayfa_button1" mnemonicParsing="false" onAction="#show_anasayfa" prefHeight="80.0" prefWidth="375.0" style="-fx-background-color: #d81d23;" styleClass="hover-hand" stylesheets="@app.tersane/newCascadeStyleSheet.css" text="ANASAYFA" textAlignment="CENTER" textFill="WHITE">
+                           <graphic>
+                              <ImageView fitHeight="65.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" translateX="-50.0">
+                                 <image>
+                                    <Image url="@app/icon/home%20(6).png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="80.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox prefHeight="80.0" prefWidth="350.0">
+                     <children>
+                        <Button fx:id="müsteriler_button" mnemonicParsing="false" onAction="#show_müsteriler" prefHeight="80.0" prefWidth="375.0" style="-fx-background-color: #d81d23;" styleClass="hover-hand" stylesheets="@app.tersane/newCascadeStyleSheet.css" text="MÜŞTERİLER" textAlignment="CENTER" textFill="WHITE">
+                           <graphic>
+                              <ImageView fitHeight="65.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" translateX="-50.0">
+                                 <image>
+                                    <Image url="@app/icon/müşteri.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="80.0" prefWidth="350.0">
+                     <children>
+                        <Button fx:id="projeler_button1" mnemonicParsing="false" onAction="#show_projeler" prefHeight="80.0" prefWidth="375.0" style="-fx-background-color: #d81d23;" styleClass="hover-hand" stylesheets="@app.tersane/newCascadeStyleSheet.css" text="PROJELER" textAlignment="CENTER" textFill="WHITE">
+                           <graphic>
+                              <ImageView fitHeight="65.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" translateX="-60.0">
+                                 <image>
+                                    <Image url="@app/icon/project%20(1).png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="80.0" prefWidth="350.0">
+                     <children>
+                        <Button fx:id="yüzeyler_button" mnemonicParsing="false" onAction="#show_yüzeyler" prefHeight="80.0" prefWidth="375.0" style="-fx-background-color: #d81d23;" styleClass="hover-hand" stylesheets="@app.tersane/newCascadeStyleSheet.css" text="YÜZEY DURUMLARI" textAlignment="CENTER" textFill="WHITE">
+                           <graphic>
+                              <ImageView fitHeight="65.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" translateX="-10.0">
+                                 <image>
+                                    <Image url="@app/icon/objective%20(1).png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="80.0" prefWidth="350.0">
+                     <children>
+                        <Button fx:id="ekipmanlar_button1" mnemonicParsing="false" onAction="#show_ekipmanlar" prefHeight="100.0" prefWidth="375.0" style="-fx-background-color: #d81d23;" styleClass="hover-hand" stylesheets="@app.tersane/newCascadeStyleSheet.css" text="EKİPMANLAR" textAlignment="CENTER" textFill="WHITE">
+                           <graphic>
+                              <ImageView fitHeight="65.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" translateX="-40.0">
+                                 <image>
+                                    <Image url="@app/icon/support.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="80.0" prefWidth="350.0">
+                     <children>
+                        <Button fx:id="raporlar_button1" mnemonicParsing="false" onAction="#show_raporlar" prefHeight="100.0" prefWidth="375.0" style="-fx-background-color: #d81d23;" styleClass="hover-hand" stylesheets="@app.tersane/newCascadeStyleSheet.css" text="  RAPORLAR" textAlignment="RIGHT" textFill="WHITE">
+                           <graphic>
+                              <ImageView fitHeight="65.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" translateX="-40.0">
+                                 <image>
+                                    <Image url="@app/icon/score.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="80.0" prefWidth="350.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <Button fx:id="personeller_button1" mnemonicParsing="false" onAction="#show_personeller" prefHeight="80.0" prefWidth="375.0" style="-fx-background-color: #d81d23;" styleClass="hover-hand" stylesheets="@app.tersane/newCascadeStyleSheet.css" text="PERSONELLER" textAlignment="CENTER" textFill="WHITE">
+                           <graphic>
+                              <ImageView fitHeight="65.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" translateX="-40.0" translateY="-2.0">
+                                 <image>
+                                    <Image url="@app/icon/manager.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
    </children>
 </AnchorPane>

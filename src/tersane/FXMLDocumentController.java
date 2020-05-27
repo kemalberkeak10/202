@@ -34,6 +34,11 @@ public class FXMLDocumentController implements Initializable {
     private Button projeler_button;
     @FXML
     private Button ekipmanlar_button;
+   
+    @FXML
+    private Button yüzeyler_button;
+    @FXML
+    private Button müsteriler_button;
     
     
 
@@ -152,10 +157,53 @@ public class FXMLDocumentController implements Initializable {
         
     }
 
-    /*@FXML
-    private void show_personeller(MouseEvent event) {
+
+ 
+
+    @FXML
+    private void show_müsteriler(ActionEvent event) {
+        if(event.getSource()== müsteriler_button){
+            try{
+                Node node=(Node) event.getSource();
+                Stage stage=(Stage) node.getScene().getWindow();
+                stage.close();
+                
+
+                Scene scene=new Scene(FXMLLoader.load(getClass().getResource("müsteriler.fxml")));
+                stage.setScene(scene);
+                stage.show();
+
+
+            }catch(IOException e){
+                System.err.println(e.getMessage());
+            }
+        }
     }
- */
+
+    @FXML
+    private void show_yüzeyler(ActionEvent event) {
+        if(event.getSource()== yüzeyler_button){
+            try{
+                Node node=(Node) event.getSource();
+                Stage stage=(Stage) node.getScene().getWindow();
+                stage.close();
+                
+
+                Scene scene=new Scene(FXMLLoader.load(getClass().getResource("yüzeyler.fxml")));
+                stage.setScene(scene);
+                stage.show();
+
+
+            }catch(IOException e){
+                System.err.println(e.getMessage());
+            }
+        }
+    }
+
+   
+   
+
+
     
 
   
@@ -166,9 +214,6 @@ public class FXMLDocumentController implements Initializable {
 
    
     
-
-        
-        
     }
 
 
