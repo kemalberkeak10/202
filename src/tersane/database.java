@@ -47,7 +47,7 @@ public class database {
         }
    }
    
-  
+   /*  PERSONELLLER ********************  */
     
     public static void preparedCalisanlariEkle(String personel_id,String personel_ad, String personel_soyad, String personel_seviye) {
             String sorgu = "Insert Into personel (personel_id,personel_ad,personel_soyad,personel_seviye) VALUES(?,?,?,?)";
@@ -91,26 +91,9 @@ public class database {
         }
        
     }
-      /*  public static ObservableList<Personeller> getCalisanData(String query){
-        ObservableList list = FXCollections.observableArrayList();
-        database db =new database();
-        try {
-            connect = db.baglan();
-            PreparedStatement pstmt = con.prepareStatement(query);
-            ResultSet rs = pstmt.executeQuery();
-            while(rs.next()) {
-                list.add(new Personeller(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4)));
-            }
-        }catch(Exception e) {
-            e.printStackTrace();
-        }
-
-        return list;
-    }
-*/
+  
         
     
-     
      public void preparedCalisanlariGetir(int personel_id) {
        
        String sorgu = "Select * From personel";
@@ -137,7 +120,7 @@ public class database {
             PreparedStatement preparedStatement  = con.prepareStatement(sorgu);
           
             preparedStatement.setString(1,personel_ad);
-            preparedStatement.setString(2,personel_soyad);
+            preparedStatement.setString(2,personel_soyad); 
             preparedStatement.setString(3,personel_seviye);
             
             preparedStatement.setString(4,personel_id );
@@ -153,53 +136,79 @@ public class database {
         }
         
      }
-       
-       
-    }
+   
+   /*    EKİPMANLAR ******************** */
+   
+     public static void preparedEkipmanEkle(String cihaz,String k_mesafe, String t_ortam, String m_teknik,String i_siddet,String i_mesafe) {
+            String sorgu = "Insert Into ekipmanlar (cihaz,k_mesafe,t_ortam,m_teknik,i_siddet,i_mesafe) VALUES(?,?,?,?,?,?)";
+                
+          
+
+            try {
+
+                preparedStatement = con.prepareStatement(sorgu);
+                preparedStatement.setString(1, cihaz);
+                preparedStatement.setString(2, k_mesafe);
+                preparedStatement.setString(3, t_ortam);
+                preparedStatement.setString(4, m_teknik);
+                preparedStatement.setString(5, i_siddet);
+                preparedStatement.setString(6, i_mesafe);
+                preparedStatement.executeUpdate();
+                System.out.println("Cihaz:" + cihaz +"Ekipman başarıyla eklendi ");
+
      
-     /*public static void preparedCalisanlariGüncelle(String personel_ad,String personel_soyad,String personel_seviye, String personel_id) {
-       
-        String sorgu = "Update personel SET personel_id= ?,personel_ad= ?,personel_soyad= ?,personal_seviye= ? where personel_id =?"; 
+        }   catch (SQLException ex) {
+                 Logger.getLogger(database.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+     public static void preparedEkipmanSil(String cihaz) {
+           // String sorgu = "Insert Into personel (personel_ad,personel_soyad,personel_seviye) VALUES(?,?,?)";
+            String sorgu = "Delete from ekipmanlar where cihaz = ? "; 
+            try {
+                
+                preparedStatement = con.prepareStatement(sorgu);
+                preparedStatement.setString(1, cihaz);
+              
 
-        try {
-            preparedStatement = con.prepareStatement(sorgu);
-            preparedStatement.setString(2, personel_ad);
-            preparedStatement.setString(3, personel_soyad);
-             preparedStatement.setString(4, personel_seviye);
-             preparedStatement.setString(1,personel_id );
-
-            
-            
-            preparedStatement.executeUpdate();
-             System.out.println("ID:"+ personel_id + "Personel Başarıyla güncellendi");
-           
-
-        } catch (SQLException ex) {
-            Logger.getLogger(database.class.getName()).log(Level.SEVERE, null, ex);
+                preparedStatement.executeUpdate();
+                System.out.println("!!" + cihaz + "başarıyla silindi");
+     
+        }   catch (SQLException ex) {
+                 Logger.getLogger(database.class.getName()).log(Level.SEVERE, null, ex);
         }
        
-    }*/
-   
-   /*  public static void preparedCalisanlariGüncelle(String personel_ad,String personel_soyad,String personel_seviye, String personel_id) {
+    }
+     public static void preparedEkipmanGüncelle(String cihaz,String k_mesafe,String t_ortam,String m_teknik,String i_siddet , String i_mesafe) {
        
-        String sorgu = "Update personel Set personel_ad = [?], personel_soyad = [?],personel_seviye=[?] where personel_id =?"; 
+        String sorgu = "Update ekipmanlar Set  k_mesafe = ?,t_ortam= ?, m_teknik= ?, i_siddet = ?, i_mesafe = ? where cihaz = ?";
 
-        try (PreparedStatement pstmt = con.prepareStatement(sorgu)){
+        try {
            
-           pstmt.setString(2,String.valueOf(personel_ad));
-            pstmt.setString(3,String.valueOf(personel_soyad));
-            pstmt.setString(4,String.valueOf(personel_seviye));
-            pstmt.setString(1,String.valueOf(personel_id ));
+            PreparedStatement preparedStatement  = con.prepareStatement(sorgu);
+          
+            preparedStatement.setString(1,cihaz);
+            preparedStatement.setString(2,k_mesafe);
+            preparedStatement.setString(3,t_ortam);
+            preparedStatement.setString(4,m_teknik);
+            preparedStatement.setString(5,i_siddet); 
+            preparedStatement.setString(6,i_mesafe);
+
 
             
-            
-           pstmt.executeUpdate();
-             System.out.println("ID:"+ personel_id + "  Personel Başarıyla güncellendi");
+           preparedStatement.executeUpdate();
+             System.out.println("Cihaz:"+ cihaz + " Başarıyla güncellendi");
            
 
         } catch (SQLException ex) {
             Logger.getLogger(database.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-     } */ 
+     }
+    
+        
+        
+        
+        
+}
+   
     

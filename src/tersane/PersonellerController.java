@@ -38,10 +38,13 @@ import static tersane.database.con;
  */
 public class PersonellerController implements Initializable {
 
+    @FXML
     private Button anasayfa_button;
     private Button projeler_button;
+    @FXML
     private Button ekipmanlar_button;
     private Button raporlar_button;
+    @FXML
     private Button personeller_button;
     @FXML
     private TextField persid;
@@ -71,19 +74,13 @@ public class PersonellerController implements Initializable {
     @FXML
     private Button personel_göster;
     @FXML
-    private Button anasayfa_button1;
-    @FXML
     private Button müsteriler_button;
     @FXML
     private Button projeler_button1;
     @FXML
     private Button yüzeyler_button;
     @FXML
-    private Button ekipmanlar_button1;
-    @FXML
     private Button raporlar_button1;
-    @FXML
-    private Button personeller_button1;
 
     /**
      * Initializes the controller class.
