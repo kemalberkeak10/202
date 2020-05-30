@@ -36,7 +36,6 @@ public class RaporlarController implements Initializable {
     private Button raporlar_button;
     @FXML
     private Button personeller_button;
-    @FXML
     private Button rekle_button;
     @FXML
     private Button müsteriler_button;
@@ -199,7 +198,6 @@ public class RaporlarController implements Initializable {
         }
     }
 
-    @FXML
     private void rapor_ekle(ActionEvent event) {
         if(event.getSource()== rekle_button){
             try{

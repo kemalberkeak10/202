@@ -204,7 +204,110 @@ public class database {
         }
         
      }
-    
+     /*******************************MÜSTERİLER **  */
+      
+        public static void preparedMüsteriEkle(String id,String firma_adi, String il, String ilce,String is_emri,String teklif_no) {
+            String sorgu = "Insert Into müsteriler (id,firma_adi,il,ilce,is_emri,teklif_no) VALUES(?,?,?,?,?,?)";
+                
+          
+
+            try {
+
+                preparedStatement = con.prepareStatement(sorgu);
+                preparedStatement.setString(1, id);
+                preparedStatement.setString(2, firma_adi);
+                preparedStatement.setString(3, il);
+                preparedStatement.setString(4, ilce);
+                preparedStatement.setString(5, is_emri);
+                preparedStatement.setString(6, teklif_no);
+                preparedStatement.executeUpdate();
+                System.out.println("ID:" + id +" NOlu Müşteri başarıyla eklendi ");
+
+     
+        }   catch (SQLException ex) {
+                 Logger.getLogger(database.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        }
+            public static void preparedMüsteriSil(String id) {
+           // String sorgu = "Insert Into personel (personel_ad,personel_soyad,personel_seviye) VALUES(?,?,?)";
+            String sorgu = "Delete from müsteriler where id = ? "; 
+            try {
+                
+                preparedStatement = con.prepareStatement(sorgu);
+                preparedStatement.setString(1, id);
+              
+
+                preparedStatement.executeUpdate();
+                System.out.println("ID: " + id + " başarıyla silindi");
+     
+        }   catch (SQLException ex) {
+                 Logger.getLogger(database.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+             public static void preparedMüsteriGüncelle(String id,String firma_adi,String il,String ilce,String is_emri , String teklif_no) {
+       
+        String sorgu = "Update müsteriler Set  firma_adi = ?,il= ?, ilce= ?, is_emri = ?, teklif_no = ? where id = ?";
+
+        try {
+           
+            PreparedStatement preparedStatement  = con.prepareStatement(sorgu);
+          
+               preparedStatement.setString(1, id);
+                preparedStatement.setString(2, firma_adi);
+                preparedStatement.setString(3, il);
+                preparedStatement.setString(4, ilce);
+                preparedStatement.setString(5, is_emri);
+                preparedStatement.setString(6, teklif_no);
+                preparedStatement.executeUpdate();
+                System.out.println("ID:" + id +" NOlu Müşteri başarıyla eklendi ");
+            
+                preparedStatement.executeUpdate();
+             System.out.println("ID: "+ id + " Başarıyla güncellendi");
+           
+
+        } catch (SQLException ex) {
+            Logger.getLogger(database.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+     }
+             
+             /************************   PROJELER *** */
+             public static void preparedProjeEkle(String id,String proje_ad) {
+            String sorgu = "Insert Into projeler (id,proje_ad) VALUES(?,?)";
+                
+          
+
+            try {
+
+                preparedStatement = con.prepareStatement(sorgu);
+                preparedStatement.setString(1, id);
+                preparedStatement.setString(2, proje_ad);
+                
+                preparedStatement.executeUpdate();
+                System.out.println("ID:" + id +" NOlu Proje başarıyla eklendi ");
+
+     
+        }   catch (SQLException ex) {
+                 Logger.getLogger(database.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        }
+            public static void preparedProjeSil(String id) {
+          
+            String sorgu = "Delete from projeler where id = ? "; 
+            try {
+                
+                preparedStatement = con.prepareStatement(sorgu);
+                preparedStatement.setString(1, id);
+              
+
+                preparedStatement.executeUpdate();
+                System.out.println("ID: " + id + " başarıyla silindi");
+     
+        }   catch (SQLException ex) {
+                 Logger.getLogger(database.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+   
         
         
         

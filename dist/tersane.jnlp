@@ -25,7 +25,7 @@
     <jar href="lib\poi-ooxml-4.1.2.jar" size="1888231" download="eager" />
     <jar href="lib\poi-ooxml-schemas-4.1.2.jar" size="7912488" download="eager" />
     <jar href="lib\xmlbeans-3.1.0.jar" size="2579738" download="eager" />
-    <jar href="tersane.jar" size="487939" download="eager" />
+    <jar href="tersane.jar" size="480926" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="tersane" >
     <param name="requiredFXVersion" value="8.0+"/>

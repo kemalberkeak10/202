@@ -7,7 +7,13 @@ package tersane;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,9 +21,14 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import static tersane.database.con;
 
 /**
  * FXML Controller class
@@ -40,6 +51,21 @@ public class ProjelerController implements Initializable {
     private Button müsteriler_button;
     @FXML
     private Button yüzeyler_button;
+    @FXML
+    private TextField pro_id;
+    @FXML
+    private TextField proad;
+    @FXML
+    private Button proje_ekle;
+    @FXML
+    private Button proje_sil;
+    @FXML
+    private TableView<proje> projeler_table;
+    @FXML
+    private TableColumn<proje, String> proid;
+    @FXML
+    private TableColumn<proje, String> propa;
+    private ObservableList<proje>data;
 
     /**
      * Initializes the controller class.
@@ -47,6 +73,23 @@ public class ProjelerController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+         try {
+            database.baglan();
+            data = FXCollections.observableArrayList();
+            ResultSet rs = con.createStatement().executeQuery("SELECT * FROM projeler");
+            while(rs.next()) {
+                
+                data.add(new proje(rs.getString(1),rs.getString(2)));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(PersonellerController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        proid.setCellValueFactory(new PropertyValueFactory<>("id"));
+        propa.setCellValueFactory(new PropertyValueFactory<>("proje_ad"));
+       
+        
+       projeler_table.setItems(null);
+       projeler_table.setItems(data);
     }    
  
     @FXML
@@ -69,7 +112,7 @@ public class ProjelerController implements Initializable {
         }
     }
 
-    @FXML
+   @FXML
     private void show_raporlar(ActionEvent event) {
          if(event.getSource()== raporlar_button){
             try{
@@ -194,6 +237,21 @@ public class ProjelerController implements Initializable {
                 System.err.println(e.getMessage());
             }
         }
+    }
+
+    @FXML
+    private void proje_e(ActionEvent event) {
+        String id=pro_id.getText();
+         String pa= propa.getText();
+            
+            database.preparedProjeEkle( id, pa);
+    }
+
+    @FXML
+    private void proje_s(ActionEvent event) {
+        String id=pro_id.getText();
+            
+          database.preparedProjeSil(id);
     }
   
 

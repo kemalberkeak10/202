@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -165,6 +166,61 @@
                         </BorderPane>
                         <HBox alignment="CENTER">
                            <children>
+                              <VBox prefHeight="700.0" prefWidth="700.0">
+                                 <HBox.margin>
+                                    <Insets top="145.0" />
+                                 </HBox.margin>
+                                 <children>
+                                    <TableView fx:id="ekipmanlar_table" prefHeight="400.0" prefWidth="660.0" style="-fx-border-color: #D81D23; -fx-border-width: 5;" stylesheets="@app.tersane/newCascadeStyleSheet.css">
+                                      <columns>
+                                        <TableColumn fx:id="cihaz" prefWidth="104.0" text="CİHAZ" />
+                                          <TableColumn fx:id="k_mesafe" minWidth="0.0" prefWidth="63.0" text="KUTUP M." />
+                                          <TableColumn fx:id="t_ortam" prefWidth="136.0" text="MP TAŞIYICI ORTAM" />
+                                          <TableColumn fx:id="m_teknik" prefWidth="151.0" text="MIKNATISLAMA TEKNİĞİ" />
+                                          <TableColumn fx:id="i_siddet" prefWidth="111.0" text="UV IŞIK SİDDETİ" />
+                                          <TableColumn fx:id="i_mesafe" prefWidth="113.0" text="IŞIK MESAFESİ" />
+                                      </columns>
+                                       <styleClass>
+                                          <String fx:value="column-header" />
+                                          <String fx:value="column-header-background" />
+                                          <String fx:value="table-row-cell" />
+                                          <String fx:value="table-view" />
+                                          <String fx:value="table-cell" />
+                                       </styleClass>
+                                    </TableView>
+                                    <HBox prefHeight="80.0" prefWidth="200.0">
+                                       <children>
+                                          <Button fx:id="ekipman_ekle" alignment="CENTER" mnemonicParsing="false" onAction="#ekipman_e" prefHeight="80.0" prefWidth="233.0" style="-fx-background-color: #D81D23; -fx-border-width: 1; -fx-border-color: #FFFFFF;" styleClass="hover-hand" stylesheets="@app.tersane/newCascadeStyleSheet.css" textFill="WHITE">
+                                             <graphic>
+                                                <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@app/icon/add.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                          <Button fx:id="ekipman_sil" alignment="CENTER" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#ekipman_s" prefHeight="80.0" prefWidth="233.0" style="-fx-background-color: #D81D23; -fx-border-width: 1; -fx-border-color: #FFFFFF;" styleClass="hover-hand" stylesheets="@app.tersane/newCascadeStyleSheet.css" textFill="WHITE">
+                                             <graphic>
+                                                <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@app/icon/bin.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                          <Button fx:id="ekipman_düzenle" alignment="CENTER" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#ekipman_d" prefHeight="80.0" prefWidth="233.0" style="-fx-background-color: #D81D23; -fx-border-width: 1; -fx-border-color: #FFFFFF;" styleClass="hover-hand" stylesheets="@app.tersane/newCascadeStyleSheet.css" textFill="WHITE">
+                                             <graphic>
+                                                <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@app/icon/settings%20(1).png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
                               <VBox>
                                  <HBox.margin>
                                     <Insets top="145.0" />
@@ -200,54 +256,6 @@
                                           <Font size="20.0" />
                                        </font>
                                     </TextField>
-                                 </children>
-                              </VBox>
-                              <VBox prefHeight="700.0" prefWidth="700.0">
-                                 <HBox.margin>
-                                    <Insets top="145.0" />
-                                 </HBox.margin>
-                                 <children>
-                                    <TableView fx:id="ekipmanlar_table" prefHeight="400.0" prefWidth="660.0" style="-fx-border-color: #D81D23; -fx-border-width: 10;">
-                                      <columns>
-                                        <TableColumn fx:id="cihaz" prefWidth="104.0" text="CİHAZ" />
-                                          <TableColumn fx:id="k_mesafe" minWidth="0.0" prefWidth="63.0" text="KUTUP M." />
-                                          <TableColumn fx:id="t_ortam" prefWidth="136.0" text="MP TAŞIYICI ORTAM" />
-                                          <TableColumn fx:id="m_teknik" prefWidth="151.0" text="MIKNATISLAMA TEKNİĞİ" />
-                                          <TableColumn fx:id="i_siddet" prefWidth="111.0" text="UV IŞIK SİDDETİ" />
-                                          <TableColumn fx:id="i_mesafe" prefWidth="113.0" text="IŞIK MESAFESİ" />
-                                      </columns>
-                                    </TableView>
-                                    <HBox prefHeight="80.0" prefWidth="200.0">
-                                       <children>
-                                          <Button fx:id="ekipman_ekle" alignment="CENTER" mnemonicParsing="false" onAction="#ekipman_e" prefHeight="80.0" prefWidth="233.0" style="-fx-background-color: #D81D23; -fx-border-width: 1; -fx-border-color: #FFFFFF;" styleClass="hover-hand" stylesheets="@app.tersane/newCascadeStyleSheet.css" textFill="WHITE">
-                                             <graphic>
-                                                <ImageView fitHeight="70.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
-                                                   <image>
-                                                      <Image url="@app/icon/add.png" />
-                                                   </image>
-                                                </ImageView>
-                                             </graphic>
-                                          </Button>
-                                          <Button fx:id="ekipman_sil" alignment="CENTER" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#ekipman_s" prefHeight="80.0" prefWidth="233.0" style="-fx-background-color: #D81D23; -fx-border-width: 1; -fx-border-color: #FFFFFF;" styleClass="hover-hand" stylesheets="@app.tersane/newCascadeStyleSheet.css" textFill="WHITE">
-                                             <graphic>
-                                                <ImageView fitHeight="70.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
-                                                   <image>
-                                                      <Image url="@app/icon/bin.png" />
-                                                   </image>
-                                                </ImageView>
-                                             </graphic>
-                                          </Button>
-                                          <Button fx:id="ekipman_düzenle" alignment="CENTER" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#ekipman_d" prefHeight="80.0" prefWidth="233.0" style="-fx-background-color: #D81D23; -fx-border-width: 1; -fx-border-color: #FFFFFF;" styleClass="hover-hand" stylesheets="@app.tersane/newCascadeStyleSheet.css" textFill="WHITE">
-                                             <graphic>
-                                                <ImageView fitHeight="70.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
-                                                   <image>
-                                                      <Image url="@app/icon/settings%20(1).png" />
-                                                   </image>
-                                                </ImageView>
-                                             </graphic>
-                                          </Button>
-                                       </children>
-                                    </HBox>
                                  </children>
                               </VBox>
                            </children>

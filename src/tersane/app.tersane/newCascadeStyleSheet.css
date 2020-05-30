@@ -62,6 +62,18 @@ and open the template in the editor.
 .fill-backgroundred{
     -fx-background-color: #D81D23;
 }
+.fill-backgroundwhite{
+    -fx-background-color: #FFFFFF;
+}
+.fill-borderred{
+    -fx-border-color: #D81D23;
+}
+.fill-borderwhite{
+    -fx-border-color: #FFFFFF;
+}
+.set-borderwidht{
+    -fx-border-width: 10;
+}
     
 
 
@@ -77,4 +89,36 @@ and open the template in the editor.
 .hover-hand{
     
     -fx-cursor:hand;
+}
+.table-view .column-header,
+.table-view .column-header-background .filler {
+    -fx-cell-size: 20;
+    -fx-background-color: #D81D23;
+}
+
+
+.table-row-cell:selected {
+    -fx-background-color: rgb(230, 14, 00);
+}
+
+.table-row-cell:selected .text {
+    -fx-fill: white;
+}
+
+.table-view .column-header .label {
+
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER;
+}
+.table-row-cell:selected {
+    -fx-background-color: rgb(230, 14, 00);
+}
+
+.table-row-cell:selected .text {
+    -fx-fill: white;
+}
+.text-field {
+    -fx-prompt-text-fill: black
+        ;
 }

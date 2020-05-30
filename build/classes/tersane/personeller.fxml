@@ -72,7 +72,7 @@
                                           </HBox>
                                           <HBox prefHeight="80.0" prefWidth="350.0">
                                              <children>
-                                                <Button fx:id="projeler_button1" mnemonicParsing="false" onAction="#show_projeler" prefHeight="80.0" prefWidth="375.0" style="-fx-background-color: #d81d23;" styleClass="hover-hand" stylesheets="@app.tersane/newCascadeStyleSheet.css" text="PROJELER" textAlignment="CENTER" textFill="WHITE">
+                                                <Button fx:id="projeler_button" mnemonicParsing="false" onAction="#show_projeler" prefHeight="80.0" prefWidth="375.0" style="-fx-background-color: #d81d23;" styleClass="hover-hand" stylesheets="@app.tersane/newCascadeStyleSheet.css" text="PROJELER" textAlignment="CENTER" textFill="WHITE">
                                                    <graphic>
                                                       <ImageView fitHeight="65.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" translateX="-60.0">
                                                          <image>
@@ -126,7 +126,7 @@
                                           </HBox>
                                           <HBox prefHeight="80.0" prefWidth="350.0">
                                              <children>
-                                                <Button fx:id="raporlar_button1" mnemonicParsing="false" onAction="#show_raporlar" prefHeight="100.0" prefWidth="375.0" style="-fx-background-color: #d81d23;" styleClass="hover-hand" stylesheets="@app.tersane/newCascadeStyleSheet.css" text="  RAPORLAR" textAlignment="RIGHT" textFill="WHITE">
+                                                <Button fx:id="raporlar_button" mnemonicParsing="false" onAction="#show_raporlar" prefHeight="100.0" prefWidth="375.0" style="-fx-background-color: #d81d23;" styleClass="hover-hand" stylesheets="@app.tersane/newCascadeStyleSheet.css" text="  RAPORLAR" textAlignment="RIGHT" textFill="WHITE">
                                                    <graphic>
                                                       <ImageView fitHeight="65.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" translateX="-40.0">
                                                          <image>

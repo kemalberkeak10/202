@@ -40,10 +40,14 @@ public class PersonellerController implements Initializable {
 
     @FXML
     private Button anasayfa_button;
-    private Button projeler_button;
+    
     @FXML
     private Button ekipmanlar_button;
-    private Button raporlar_button;
+    
+    @FXML
+    private Button müsteriler_button;
+    @FXML
+    private Button projeler_button;
     @FXML
     private Button personeller_button;
     @FXML
@@ -74,13 +78,9 @@ public class PersonellerController implements Initializable {
     @FXML
     private Button personel_göster;
     @FXML
-    private Button müsteriler_button;
-    @FXML
-    private Button projeler_button1;
-    @FXML
     private Button yüzeyler_button;
     @FXML
-    private Button raporlar_button1;
+    private Button raporlar_button;
 
     /**
      * Initializes the controller class.
