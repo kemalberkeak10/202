@@ -73,24 +73,9 @@ public class ProjelerController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-         try {
-            database.baglan();
-            data = FXCollections.observableArrayList();
-            ResultSet rs = con.createStatement().executeQuery("SELECT * FROM projeler");
-            while(rs.next()) {
-                
-                data.add(new proje(rs.getString(1),rs.getString(2)));
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(PersonellerController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        proid.setCellValueFactory(new PropertyValueFactory<>("id"));
-        propa.setCellValueFactory(new PropertyValueFactory<>("proje_ad"));
+       tablo();   
        
-        
-       projeler_table.setItems(null);
-       projeler_table.setItems(data);
-    }    
+    }
  
     @FXML
     private void show_anasayfa(ActionEvent event) {
@@ -242,9 +227,10 @@ public class ProjelerController implements Initializable {
     @FXML
     private void proje_e(ActionEvent event) {
         String id=pro_id.getText();
-         String pa= propa.getText();
+         String pa= proad.getText();
             
             database.preparedProjeEkle( id, pa);
+            tablo();
     }
 
     @FXML
@@ -252,8 +238,27 @@ public class ProjelerController implements Initializable {
         String id=pro_id.getText();
             
           database.preparedProjeSil(id);
+          tablo();
     }
-  
+   public void tablo(){   
+        try {
+            database.baglan();
+            data = FXCollections.observableArrayList();
+            ResultSet rs = con.createStatement().executeQuery("SELECT * FROM projeler");
+            while(rs.next()) {
+                
+                data.add(new proje(rs.getString(1),rs.getString(2)));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(PersonellerController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        proid.setCellValueFactory(new PropertyValueFactory<>("id"));
+        propa.setCellValueFactory(new PropertyValueFactory<>("proje_ad"));
+       
+        
+       projeler_table.setItems(null);
+       projeler_table.setItems(data);
+    } 
 
     
 }

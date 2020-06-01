@@ -5,15 +5,21 @@
  */
 package tersane;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import static tersane.database.con;
 
 /**
  *
  * @author Toshiba
  */
 public class ekipman {
-    private final SimpleStringProperty cihaz,kutup_m,t_ortam,hesaplama_t,isik_s,isik_m;
+    private  SimpleStringProperty cihaz,kutup_m,t_ortam,hesaplama_t,isik_s,isik_m;
     public ekipman(String cihaz,String kutup_m,String t_ortam,String hesaplama_t,String isik_s,String isik_m){
         this.cihaz= new SimpleStringProperty(cihaz);
         this.kutup_m = new SimpleStringProperty(kutup_m);
@@ -21,9 +27,38 @@ public class ekipman {
         this.hesaplama_t = new SimpleStringProperty(hesaplama_t);
         this.isik_s = new SimpleStringProperty(isik_s);
          this.isik_m = new SimpleStringProperty(isik_m);
-        
-    
+   
 }
+    public ekipman(String kutup_m,String t_ortam,String hesaplama_t,String isik_s,String isik_m){
+        
+        this.kutup_m = new SimpleStringProperty(kutup_m);
+        this.t_ortam=  new SimpleStringProperty(t_ortam);
+        this.hesaplama_t = new SimpleStringProperty(hesaplama_t);
+        this.isik_s = new SimpleStringProperty(isik_s);
+         this.isik_m = new SimpleStringProperty(isik_m);
+    }
+     
+    public static ekipman ekip(String name){
+
+        String query="select * from ekipmanlar where cihaz=?";
+         ekipman eki=null;
+        PreparedStatement prep;
+
+        try {
+            prep=con.prepareStatement(query);
+            prep.setString(1, name);
+            ResultSet res=prep.executeQuery();
+           while(res.next()){
+           eki=new ekipman(res.getString("cihaz"),res.getString("k_mesafe"), res.getString("t_ortam"),res.getString("m_teknik"),res.getString("i_siddet"),res.getString("i_mesafe"));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(database.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+
+        return eki;
+    }
+  
 
      public String getCihaz(){
          return cihaz.get();

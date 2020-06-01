@@ -89,24 +89,9 @@ public class PersonellerController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         
         // TODO
-        try {
+       
             database.baglan();
-            data = FXCollections.observableArrayList();
-            ResultSet rs = con.createStatement().executeQuery("SELECT * FROM personel");
-            while(rs.next()) {
-                
-                data.add(new personel(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4)));
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(PersonellerController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        pers_ID.setCellValueFactory(new PropertyValueFactory<>("id"));
-        pers_AD.setCellValueFactory(new PropertyValueFactory<>("ad"));
-        pers_SOYAD.setCellValueFactory(new PropertyValueFactory<>("soyad"));
-        pers_LEVEL.setCellValueFactory(new PropertyValueFactory<>("level"));
-        
-        personeller_table.setItems(null);
-        personeller_table.setItems(data);
+            tablo();
     }    
 
 
@@ -282,6 +267,7 @@ public class PersonellerController implements Initializable {
         }
         else{
               database.preparedCalisanlariEkle(id, ad, soyad, seviye);
+              tablo();
         }
 
 
@@ -292,6 +278,7 @@ public class PersonellerController implements Initializable {
             String id=persid.getText();
             
           database.preparedCalisanlariSil(id);
+          tablo();
     }
 
     @FXML
@@ -301,6 +288,7 @@ public class PersonellerController implements Initializable {
         String id=persid.getText();
         String level = perlev.getText();
         database.preparedCalisanlariGüncelle( ad, soyad,level,id);
+        tablo();
     }
 
     @FXML
@@ -323,8 +311,28 @@ public class PersonellerController implements Initializable {
         
         personeller_table.setItems(null);
         personeller_table.setItems(data);
+        tablo();
+        
     }
-
- 
+          public void tablo(){
+                  try {
+            database.baglan();
+            data = FXCollections.observableArrayList();
+            ResultSet rs = con.createStatement().executeQuery("SELECT * FROM personel");
+            while(rs.next()) {
+                
+                data.add(new personel(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4)));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(PersonellerController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        pers_ID.setCellValueFactory(new PropertyValueFactory<>("id"));
+        pers_AD.setCellValueFactory(new PropertyValueFactory<>("ad"));
+        pers_SOYAD.setCellValueFactory(new PropertyValueFactory<>("soyad"));
+        pers_LEVEL.setCellValueFactory(new PropertyValueFactory<>("level"));
+        
+        personeller_table.setItems(null);
+        personeller_table.setItems(data);
+          }
     
 }

@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tersane.RaporlarController">
+<AnchorPane id="AnchorPane" prefWidth="1360.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tersane.RaporlarController">
    <children>
-      <AnchorPane id="AnchorPane" layoutX="10.0" layoutY="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane id="AnchorPane" layoutX="10.0" layoutY="10.0" styleClass="fill-backgroundwhite" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <AnchorPane layoutX="-31.0" layoutY="7.0" maxWidth="1366.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="-7.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="39.0" AnchorPane.topAnchor="-10.0">
+            <AnchorPane layoutX="-31.0" layoutY="7.0" maxWidth="1.7976931348623157E308" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="-0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
                   <BorderPane>
                      <top>
@@ -161,20 +163,135 @@
                   </BorderPane>
                </children>
             </AnchorPane>
-            <VBox alignment="CENTER" layoutX="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="400.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="212.0">
+            <Label alignment="CENTER" prefHeight="103.0" prefWidth="699.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #D81D23; -fx-border-width: 10;" text="MANYETİK PARÇACIK MUAYENE RAPORU " textFill="#d81d23" AnchorPane.leftAnchor="440.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <font>
+                  <Font size="32.0" />
+               </font>
+            </Label>
+            <VBox layoutX="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="400.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="212.0">
                <children>
-                  <Pane prefHeight="100.0" prefWidth="694.0">
+                  <HBox prefHeight="169.0">
                      <children>
-                        <Label alignment="CENTER" layoutX="-1.0" layoutY="28.0" prefHeight="103.0" prefWidth="699.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #D81D23; -fx-border-width: 10;" text="MANYETİK PARÇACIK MUAYENE RAPORU " textFill="#d81d23" translateY="-30.0">
-                           <font>
-                              <Font size="32.0" />
-                           </font>
-                        </Label>
+                        <VBox prefHeight="80.0" prefWidth="200.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="40.0" prefWidth="200.0" text="OPERATÖR">
+                                 <styleClass>
+                                    <String fx:value="fill-backgroundred" />
+                                    <String fx:value="fill-white" />
+                                 </styleClass>
+                              </Label>
+                              <ChoiceBox fx:id="operatör" onMouseClicked="#operatorset" prefHeight="40.0" prefWidth="200.0">
+                                 <styleClass>
+                                    <String fx:value="fill-backgroundwhite" />
+                                    <String fx:value="fill-borderred" />
+                                 </styleClass>
+                              </ChoiceBox>
+                           </children>
+                           <styleClass>
+                              <String fx:value="fill-backgroundwhite" />
+                              <String fx:value="fill-borderwhite" />
+                           </styleClass>
+                        </VBox>
+                        <VBox layoutX="10.0" layoutY="10.0" prefWidth="200.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="40.0" prefWidth="200.0" text="Değerlendiren">
+                                 <styleClass>
+                                    <String fx:value="fill-backgroundred" />
+                                    <String fx:value="fill-white" />
+                                 </styleClass>
+                              </Label>
+                              <ChoiceBox fx:id="değerlendiren" onMouseClicked="#degerlendirenset" prefHeight="40.0" prefWidth="200.0">
+                                 <styleClass>
+                                    <String fx:value="fill-backgroundwhite" />
+                                    <String fx:value="fill-borderred" />
+                                 </styleClass>
+                              </ChoiceBox>
+                           </children>
+                           <styleClass>
+                              <String fx:value="fill-backgroundwhite" />
+                              <String fx:value="fill-borderwhite" />
+                           </styleClass>
+                        </VBox>
+                        <VBox layoutX="210.0" layoutY="10.0" prefWidth="200.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="40.0" prefWidth="200.0" text="Onay">
+                                 <styleClass>
+                                    <String fx:value="fill-backgroundred" />
+                                    <String fx:value="fill-white" />
+                                 </styleClass>
+                              </Label>
+                              <ChoiceBox fx:id="onay" onMouseClicked="#onayset" prefHeight="40.0" prefWidth="200.0">
+                                 <styleClass>
+                                    <String fx:value="fill-backgroundwhite" />
+                                    <String fx:value="fill-borderred" />
+                                 </styleClass>
+                              </ChoiceBox>
+                           </children>
+                           <styleClass>
+                              <String fx:value="fill-backgroundwhite" />
+                              <String fx:value="fill-borderwhite" />
+                           </styleClass>
+                        </VBox>
+                        <VBox layoutX="369.0" layoutY="10.0" prefWidth="200.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="40.0" prefWidth="200.0" text="Müşteri">
+                                 <styleClass>
+                                    <String fx:value="fill-backgroundred" />
+                                    <String fx:value="fill-white" />
+                                 </styleClass>
+                              </Label>
+                              <ChoiceBox fx:id="mstr" onMouseClicked="#müsteriset" prefHeight="40.0" prefWidth="200.0">
+                                 <styleClass>
+                                    <String fx:value="fill-backgroundwhite" />
+                                    <String fx:value="fill-borderred" />
+                                 </styleClass>
+                              </ChoiceBox>
+                           </children>
+                           <styleClass>
+                              <String fx:value="fill-backgroundwhite" />
+                              <String fx:value="fill-borderwhite" />
+                           </styleClass>
+                        </VBox>
+                        <VBox>
+                           <children>
+                              <Label alignment="CENTER" prefHeight="40.0" prefWidth="140.0" text="Tarih">
+                                 <styleClass>
+                                    <String fx:value="fill-backgroundred" />
+                                    <String fx:value="fill-white" />
+                                 </styleClass>
+                              </Label>
+                              <DatePicker fx:id="tarih" onAction="#tarihal" prefHeight="40.0" prefWidth="140.0">
+                                 <styleClass>
+                                    <String fx:value="fill-backgroundwhite" />
+                                    <String fx:value="fill-borderred" />
+                                 </styleClass>
+                              </DatePicker>
+                           </children>
+                           <styleClass>
+                              <String fx:value="fill-backgroundwhite" />
+                              <String fx:value="fill-borderwhite" />
+                           </styleClass>
+                        </VBox>
                      </children>
-                     <VBox.margin>
-                        <Insets top="-100.0" />
-                     </VBox.margin>
-                  </Pane>
+                  </HBox>
+                  <HBox alignment="BOTTOM_RIGHT">
+                     <children>
+                        <Button fx:id="rapor_ekle" alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#rapor_e" prefHeight="90.0" prefWidth="199.0" translateX="-30.0" translateY="200.0">
+                           <graphic>
+                              <ImageView fitHeight="80.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@app/icon/add%20(1).png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <styleClass>
+                              <String fx:value="fill-backgroundred" />
+                              <String fx:value="hover-hand" />
+                              <String fx:value="fill-borderred" />
+                           </styleClass>
+                        </Button>
+                     </children>
+                  </HBox>
                </children>
             </VBox>
          </children>

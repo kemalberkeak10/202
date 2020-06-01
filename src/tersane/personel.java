@@ -13,13 +13,28 @@ import javafx.beans.property.StringProperty;
  * @author Toshiba
  */
 public class personel {
-    private final SimpleStringProperty id,ad,soyad,level;
+    private  SimpleStringProperty id,ad,soyad,level;
     public personel(String id,String ad,String soyad,String level){
         this.id= new SimpleStringProperty(id);
         this.ad = new SimpleStringProperty(ad);
         this.soyad =  new SimpleStringProperty(soyad);
         this.level = new SimpleStringProperty(level); ;
     }
+    public personel(String ad,String soyad,String level){
+        this.ad = new SimpleStringProperty(ad);
+        this.soyad =  new SimpleStringProperty(soyad);
+        this.level = new SimpleStringProperty(level); ;
+    }
+    public personel(String ad,String soyad){
+       this.ad = new SimpleStringProperty(ad);
+        this.soyad =  new SimpleStringProperty(soyad);
+    }
+    @Override
+  public String toString(){
+        return this.adProperty().getValue() + " " + this.soyadProperty().getValue();
+    }
+
+    
 
     public String getId() {
         return id.get();

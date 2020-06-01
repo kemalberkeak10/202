@@ -91,29 +91,8 @@ public class MüsterilerController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        
-        try {
-            database.baglan();
-            data = FXCollections.observableArrayList();
-            ResultSet rs = con.createStatement().executeQuery("SELECT * FROM müsteriler");
-            while(rs.next()) {
-                
-                data.add(new müsteri(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6)));
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(PersonellerController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        id.setCellValueFactory(new PropertyValueFactory<>("id"));
-        f_adi.setCellValueFactory(new PropertyValueFactory<>("firma_adi"));
-        il.setCellValueFactory(new PropertyValueFactory<>("il"));
-        ilce.setCellValueFactory(new PropertyValueFactory<>("ilce"));
-        i_emri.setCellValueFactory(new PropertyValueFactory<>("is_emri"));
-        t_no.setCellValueFactory(new PropertyValueFactory<>("teklif_no"));
-        
-        müsteriler_table.setItems(null);
-        müsteriler_table.setItems(data);
-    }    
-
+       tablo();
+    }
     @FXML
     private void show_anasayfa(ActionEvent event) {
          if(event.getSource()== anasayfa_button){
@@ -276,6 +255,7 @@ public class MüsterilerController implements Initializable {
       
 
               database.preparedMüsteriEkle( id, fa, il, ilce, ie, tn);
+              tablo();
     }
 
     @FXML
@@ -283,6 +263,7 @@ public class MüsterilerController implements Initializable {
         String id=müsid.getText();
             
           database.preparedMüsteriSil(id);
+          tablo();
     }
 
     @FXML
@@ -296,5 +277,30 @@ public class MüsterilerController implements Initializable {
        
  
         database.preparedMüsteriGüncelle( fa, il, ilce, ie, tn, id);
+        tablo();
+    }
+    public void tablo(){ 
+        try {
+            database.baglan();
+            data = FXCollections.observableArrayList();
+            ResultSet rs = con.createStatement().executeQuery("SELECT * FROM müsteriler");
+            while(rs.next()) {
+                
+                data.add(new müsteri(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6)));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(PersonellerController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        id.setCellValueFactory(new PropertyValueFactory<>("id"));
+        f_adi.setCellValueFactory(new PropertyValueFactory<>("firma_adi"));
+        il.setCellValueFactory(new PropertyValueFactory<>("il"));
+        ilce.setCellValueFactory(new PropertyValueFactory<>("ilce"));
+        i_emri.setCellValueFactory(new PropertyValueFactory<>("is_emri"));
+        t_no.setCellValueFactory(new PropertyValueFactory<>("teklif_no"));
+        
+        müsteriler_table.setItems(null);
+        müsteriler_table.setItems(data);
     }
 }
+ 
+    

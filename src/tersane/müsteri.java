@@ -1,12 +1,18 @@
-/*
+    /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 package tersane;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import static tersane.database.con;
 
 /**
  *
@@ -14,17 +20,75 @@ import javafx.beans.property.StringProperty;
  */
 public class müsteri {
     
-    private final SimpleStringProperty id,firma_adi,il,ilce,is_emri,teklif_no;
-    public müsteri(String id,String firma_adi,String il,String ilce,String is_emri,String teklif_no){
+    private SimpleStringProperty id,firma_adi,il,ilce,is_emri,teklif_no;
+    
+    public müsteri(String id, String firma_adi, String il, String ilce, String is_emri,String teklif_no){
         this.id= new SimpleStringProperty(id);
         this.firma_adi = new SimpleStringProperty(firma_adi);
         this.il=  new SimpleStringProperty(il);
         this.ilce = new SimpleStringProperty(ilce);
         this.is_emri = new SimpleStringProperty(is_emri);
          this.teklif_no = new SimpleStringProperty(teklif_no);
-        
-    
+
 }
+    public müsteri(String firma_adi, String il, String ilce, String is_emri,String teklif_no){
+       
+        this.firma_adi = new SimpleStringProperty(firma_adi);
+        this.il=  new SimpleStringProperty(il);
+        this.ilce = new SimpleStringProperty(ilce);
+        this.is_emri = new SimpleStringProperty(is_emri);
+         this.teklif_no = new SimpleStringProperty(teklif_no);
+
+}
+       public müsteri(String firma_adi, String il,String is_emri,String teklif_no){
+       
+        this.firma_adi = new SimpleStringProperty(firma_adi);
+        this.il=  new SimpleStringProperty(il);
+        this.is_emri = new SimpleStringProperty(is_emri);
+         this.teklif_no = new SimpleStringProperty(teklif_no);
+
+}
+        public müsteri(String il,String is_emri,String teklif_no){
+       
+       
+        this.il=  new SimpleStringProperty(il);
+        this.is_emri = new SimpleStringProperty(is_emri);
+         this.teklif_no = new SimpleStringProperty(teklif_no);
+
+}
+    public müsteri(String firma_adi){
+       
+        this.firma_adi = new SimpleStringProperty(firma_adi);
+        
+}
+  
+   
+    public static müsteri must(String name){
+
+        String query="select * from müsteriler where firma_adi=?";
+         müsteri mus=null;
+        PreparedStatement prep;
+
+        try {
+            prep=con.prepareStatement(query);
+            prep.setString(1, name);
+            ResultSet res=prep.executeQuery();
+           while(res.next()){
+           mus=new müsteri(res.getString("id"),res.getString("firma_adi"), res.getString("il"),res.getString("ilce"),res.getString("is_emri"),res.getString("teklif_no"));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(database.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+
+        return mus;
+    }
+    public String toString(){
+        return this.firma_adiProperty().getValue();
+    }
+
+  
+    
 
      public String getId(){
          return id.get();

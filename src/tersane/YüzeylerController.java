@@ -7,7 +7,13 @@ package tersane;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,8 +21,13 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import static tersane.database.con;
 
 /**
  * FXML Controller class
@@ -39,6 +50,21 @@ public class YüzeylerController implements Initializable {
     private Button raporlar_button;
     @FXML
     private Button personeller_button;
+    @FXML
+    private TextField yüzid;
+    @FXML
+    private TextField yüzyd;
+    @FXML
+    private TableView<yuzey> yüzeyler_table;
+    @FXML
+    private TableColumn<yuzey, String> id;
+    @FXML
+    private TableColumn<yuzey, String> yuzey_durumu;
+    private ObservableList<yuzey>data;
+    @FXML
+    private Button yuzey_ekle;
+    @FXML
+    private Button yuzey_sil;
 
     /**
      * Initializes the controller class.
@@ -46,7 +72,9 @@ public class YüzeylerController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+        
+        rapor();  
+    }
 
     @FXML
     private void show_anasayfa(ActionEvent event) {
@@ -198,7 +226,42 @@ public class YüzeylerController implements Initializable {
         }
     }
 
+    @FXML
+    private void yuzey_e(ActionEvent event) {
+        String id=yüzid.getText();
+         String yd= yüzyd.getText();
+            
+            database.preparedYuzeyEkle( id, yd);
+            rapor();
+    }
 
+    @FXML
+    private void yuzey_s(ActionEvent event) {
+        String id=yüzid.getText();
+            
+          database.preparedYuzeySil(id);
+          rapor();
+    }
+
+          public void rapor(){
+            try {
+            database.baglan();
+            data = FXCollections.observableArrayList();
+            ResultSet rs = con.createStatement().executeQuery("SELECT * FROM yüzeyler");
+            while(rs.next()) {
+                
+                data.add(new yuzey(rs.getString(1),rs.getString(2)));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(PersonellerController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        id.setCellValueFactory(new PropertyValueFactory<>("id"));
+        yuzey_durumu.setCellValueFactory(new PropertyValueFactory<>("yuzey_durumu"));
+       
+        
+       yüzeyler_table.setItems(null);
+       yüzeyler_table.setItems(data);
+    }
 
 
     

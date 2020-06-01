@@ -91,27 +91,8 @@ public class EkipmanlarController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        try {
-            database.baglan();
-            data = FXCollections.observableArrayList();
-            ResultSet rs = con.createStatement().executeQuery("SELECT * FROM ekipmanlar");
-            while(rs.next()) {
-                
-                data.add(new ekipman(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6)));
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(PersonellerController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        cihaz.setCellValueFactory(new PropertyValueFactory<>("cihaz"));
-        k_mesafe.setCellValueFactory(new PropertyValueFactory<>("kutup_m"));
-        t_ortam.setCellValueFactory(new PropertyValueFactory<>("t_ortam"));
-        m_teknik.setCellValueFactory(new PropertyValueFactory<>("hesaplama_t"));
-        i_siddet.setCellValueFactory(new PropertyValueFactory<>("isik_s"));
-        i_mesafe.setCellValueFactory(new PropertyValueFactory<>("isik_m"));
-        
-        ekipmanlar_table.setItems(null);
-        ekipmanlar_table.setItems(data);
-    }    
+        tablo();
+}
 
 
     @FXML
@@ -272,6 +253,7 @@ public class EkipmanlarController implements Initializable {
        
  
         database.preparedEkipmanGüncelle( ktm, to, mt, is, im,chz);
+        tablo();
        
     }
 
@@ -288,6 +270,7 @@ public class EkipmanlarController implements Initializable {
       
 
               database.preparedEkipmanEkle( chz, ktm, to, mt, is, im);
+              tablo();
         }
 
     @FXML
@@ -295,8 +278,30 @@ public class EkipmanlarController implements Initializable {
         String chz=ekipc.getText();
             
           database.preparedEkipmanSil(chz);
+          tablo();
     }
-
+public void tablo(){ 
+        try {
+            database.baglan();
+            data = FXCollections.observableArrayList();
+            ResultSet rs = con.createStatement().executeQuery("SELECT * FROM ekipmanlar");
+            while(rs.next()) {
+                
+                data.add(new ekipman(rs.getString(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6)));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(PersonellerController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        cihaz.setCellValueFactory(new PropertyValueFactory<>("cihaz"));
+        k_mesafe.setCellValueFactory(new PropertyValueFactory<>("kutup_m"));
+        t_ortam.setCellValueFactory(new PropertyValueFactory<>("t_ortam"));
+        m_teknik.setCellValueFactory(new PropertyValueFactory<>("hesaplama_t"));
+        i_siddet.setCellValueFactory(new PropertyValueFactory<>("isik_s"));
+        i_mesafe.setCellValueFactory(new PropertyValueFactory<>("isik_m"));
+        
+        ekipmanlar_table.setItems(null);
+        ekipmanlar_table.setItems(data);
+    }   
 
 }
 

@@ -170,7 +170,7 @@
                                  <styleClass>
                                     <String fx:value="set-borderwidht" />
                                     <String fx:value="fill-backgroundwhite" />
-                                    <String fx:value="fill-white" />
+                                    <String fx:value="fill-red" />
                                     <String fx:value="fill-borderred" />
                                     <String fx:value="fn-32" />
                                  </styleClass>
@@ -179,7 +179,7 @@
                                  <styleClass>
                                     <String fx:value="set-borderwidht" />
                                     <String fx:value="fill-backgroundwhite" />
-                                    <String fx:value="fill-white" />
+                                    <String fx:value="fill-red" />
                                     <String fx:value="fill-borderred" />
                                     <String fx:value="fn-32" />
                                  </styleClass>
