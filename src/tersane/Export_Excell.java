@@ -12,13 +12,12 @@ import java.io.IOException;
 import org.apache.poi.ss.usermodel.BorderStyle;
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.HorizontalAlignment;
-import org.apache.poi.ss.usermodel.IndexedColors;
 import org.apache.poi.ss.usermodel.VerticalAlignment;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
+import tersane.Yeni_raporController;
 /**
  *
  * @author Toshiba
@@ -47,8 +46,9 @@ public class Export_Excell {
           String siraNo14 ,String kpNo14 ,String kuNo14,String kyNo14, String kal14,String c14,String ht14,String hy14,String s14,
            String opAd, String deAd, String onAd, String opSeviye, String deSeviye, String onSeviye, String operatörTarih, String degerlendirenTarih, String onayTarih) 
             throws IOException  {
-        
-            FileInputStream inputStream = new FileInputStream(new File("Bericht2_MitKommentaren.xlsx"));
+             String dosyaAd = projeAd;
+            FileInputStream inputStream = new FileInputStream(new File("RaporExcell.xlsx"));
+            
             XSSFWorkbook workbook = new XSSFWorkbook(inputStream); 
             XSSFSheet sheet = workbook.getSheetAt(0);
             CellStyle style1 = workbook.createCellStyle();
@@ -62,6 +62,8 @@ public class Export_Excell {
             style1.setBorderBottom(BorderStyle.THIN);
             style1.setBorderLeft(BorderStyle.THIN);
             style1.setBorderRight(BorderStyle.THIN);
+            
+          
             
             XSSFRow row = sheet.getRow(2); //ÜST SOL
             XSSFCell cell = row.createCell(3);
@@ -806,7 +808,7 @@ public class Export_Excell {
             
             inputStream.close();
  
-            FileOutputStream outputStream = new FileOutputStream("C:\\Users\\Toshiba\\Documents\\NetBeansProjects\\tersane\\Bericht2_MitKommentaren.xlsx");
+            FileOutputStream outputStream = new FileOutputStream("C:\\Users\\Toshiba\\Documents\\NetBeansProjects\\tersane\\"+raporNo+".xlsx");
             workbook.write(outputStream);
             workbook.close();
             outputStream.close();

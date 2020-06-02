@@ -18,13 +18,16 @@ import javafx.scene.control.DateCell;
  * @author Toshiba
  */
 public class rapor {
-    private final StringProperty raporNo;
-    private final ObjectProperty<LocalDate> raporTarihi;
+    private final SimpleStringProperty raporNo;
+    private ObjectProperty<LocalDate> raporTarihi;
     String dateFormat = "MM/dd/yyyy";
 
-    public rapor(StringProperty raporNo, ObjectProperty<LocalDate> raporTarihi) {
-        this.raporNo = raporNo;
+    public rapor(String raporNo, ObjectProperty<LocalDate> raporTarihi) {
+        this.raporNo = new SimpleStringProperty(raporNo);
         this.raporTarihi = raporTarihi;
+    }
+    public rapor(String raporNo){
+        this.raporNo = new SimpleStringProperty(raporNo);
     }
     
     public String getRaporNo() {

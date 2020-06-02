@@ -393,7 +393,12 @@ public class Yeni_raporController implements Initializable {
     private TextField hatayeri13;
     @FXML
     private TextField hatayeri14;
+    @FXML
+    private TextField muayenead;
+    @FXML
+    private Button exportPDF;
     
+    public int rapornumarasi = 1000;
 
        
 
@@ -405,6 +410,8 @@ public class Yeni_raporController implements Initializable {
         // TODO
        database.baglan();
        müsteribilgileriniyükle();
+       
+        this.raporno.setText(String.valueOf(rapornumarasi));
        String proje = "Select proje_ad from projeler";
        String yüzey = "Select yuzey_durumu from yüzeyler";
        String muayeneasamasi = "Select asama from muayene_asamasi";
@@ -416,7 +423,7 @@ public class Yeni_raporController implements Initializable {
             prjd.getItems().addAll(database.showProje(proje));
             yzydrm.getItems().addAll(database.showYüzeyD(yüzey));
             mynsm.getItems().addAll(database.showMuayene_asamasi(muayeneasamasi));
-            kmtp.getItems().addAll(database.showAkimtipi(muayeneasamasi));
+            kmtp.getItems().addAll(database.showAkimtipi(akimtipi));
             
             sonuc1.getItems().addAll(database.showSonuc(sonuc));
             sonuc2.getItems().addAll(database.showSonuc(sonuc));
@@ -450,6 +457,7 @@ public class Yeni_raporController implements Initializable {
         this.degerlendiren_tarih.setText(String.valueOf(RaporlarController.secilentarih));
          this.onay_tarih .setText(String.valueOf(RaporlarController.secilentarih)); 
          this.muayene_tarihi.setText(String.valueOf(RaporlarController.secilentarih));
+        
         chz.setOnAction(e->{
         loadOtherCihazInformation();
                
@@ -467,6 +475,7 @@ public class Yeni_raporController implements Initializable {
              
             
             exportExcell.setOnAction(e->{
+                
                 String musteriAd = mstr.getText();
                 String projeAd = prjd.getValue();
                 String testYeri = testyeri.getText();
@@ -480,7 +489,7 @@ public class Yeni_raporController implements Initializable {
                 String muayeneAsamasi = mynsm.getValue();
                 
                 String sayfaNo = sayfano.getText();
-                String raporNo = raporno.getText();
+                String raporNo = String.valueOf(rapornumarasi);
                 String raporTarihi = rapor_tarihi.getText();
                 String isemriNo = isemri.getText();
                 String teklifNo = teklifno.getText();
@@ -659,8 +668,9 @@ public class Yeni_raporController implements Initializable {
                 String operatörTarih= operatör_tarih.getText();
                 String degerlendirenTarih = degerlendiren_tarih.getText();
                 String onayTarih = onay_tarih.getText();
-               
-               
+                 ++rapornumarasi;
+                 this.raporno.setText(String.valueOf(rapornumarasi));
+                            
                 try {
                     ex.excell(musteriAd,projeAd, testYeri, muayeneStandarti , degerlendirmeStandarti,
                             muayeneProsedürü, muayeneKapsami, resimNo, yüzeyDurumu, muayeneAsamasi,
@@ -701,6 +711,7 @@ public class Yeni_raporController implements Initializable {
         chz.getItems().addAll(dao.showEkipman(sql));
 
     }
+   
 
     private void loadOtherCihazInformation() {
         

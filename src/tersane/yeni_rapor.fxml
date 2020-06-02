@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
@@ -29,7 +30,7 @@
                      <graphic>
                         <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@app/icon/back%20(1).png" />
+                              <Image url="@app/icon/left-chevron.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -38,29 +39,50 @@
             </HBox>
             <HBox layoutX="201.0" layoutY="1.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <VBox prefWidth="1100.0">
+                  <VBox prefWidth="1090.0">
                      <children>
-                        <TextField alignment="CENTER" prefHeight="74.0" prefWidth="1125.0" style="-fx-background-color: #FFD1CD;" styleClass="fill-red" text="GÖZETİM VE MUAYENE HİZMETLERİ">
+                        <TextField alignment="CENTER" prefHeight="74.0" prefWidth="1090.0" style="-fx-background-color: #FFD1CD;" styleClass="fill-red" text="GÖZETİM VE MUAYENE HİZMETLERİ">
                            <font>
                               <Font size="32.0" />
                            </font>
                         </TextField>
-                        <TextField alignment="CENTER" prefHeight="74.0" promptText="Muayene Adını Giriniz" style="-fx-background-color: #FFD1CD;">
+                        <TextField alignment="CENTER" prefHeight="74.0" style="-fx-background-color: #FFD1CD;" text="MANYETİK PARÇACIK MUAYENE RAPORU">
                            <font>
                               <Font size="32.0" />
                            </font>
                         </TextField>
                      </children>
                   </VBox>
-                  <Button fx:id="exportExcell" alignment="CENTER" mnemonicParsing="false" prefHeight="148.0" prefWidth="60.0" style="-fx-background-color: #FFD1CD;" styleClass="hover-hand">
-                     <graphic>
-                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@app/icon/export.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
+                  <VBox>
+                     <children>
+                        <Button fx:id="exportExcell" alignment="CENTER" mnemonicParsing="false" prefHeight="74.0" prefWidth="70.0" style="-fx-background-color: #FFD1CD;">
+                           <graphic>
+                              <ImageView fitHeight="40.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@app/icon/excel%20(2).png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <styleClass>
+                              <String fx:value="hover-hand" />
+                              <String fx:value="fill-borderwhite" />
+                           </styleClass>
+                        </Button>
+                        <Button fx:id="exportPDF" alignment="CENTER" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="74.0" prefWidth="70.0" style="-fx-background-color: #FFD1CD;">
+                           <graphic>
+                              <ImageView fitHeight="40.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@app/icon/pdf%20(5).png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <styleClass>
+                              <String fx:value="hover-hand" />
+                              <String fx:value="fill-borderwhite" />
+                           </styleClass>
+                        </Button>
+                     </children>
+                  </VBox>
                </children>
             </HBox>
             <VBox AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="150.0">
