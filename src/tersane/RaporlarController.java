@@ -65,8 +65,8 @@ public class RaporlarController implements Initializable {
     private ChoiceBox<personel> değerlendiren;
     @FXML
     private ChoiceBox<personel> onay;
-    @FXML
-    private DatePicker tarih;
+        @FXML
+        private DatePicker tarih;
     
     static String b,c;
     static personel secilen1;
@@ -293,9 +293,9 @@ public class RaporlarController implements Initializable {
         secilen3 = onay.getSelectionModel().getSelectedItem();
   
         
-        b = String.valueOf(secilen2.adProperty().get());
+        b = String.valueOf(secilen3.adProperty().get());
        
-        c = String.valueOf(secilen2.soyadProperty().get());
+        c = String.valueOf(secilen3.soyadProperty().get());
       
         secilenOnSeviye=database.getSeviye(b,c);
         

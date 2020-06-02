@@ -81,13 +81,13 @@
                               <TextField fx:id="mstr" alignment="CENTER" layoutX="10.0" layoutY="50.0" prefHeight="40.0" prefWidth="253.0" />
                               <ChoiceBox fx:id="prjd" prefHeight="40.0" prefWidth="253.0" style="-fx-background-color: #FFFFFF;" />
                               <TextField fx:id="testyeri" alignment="CENTER" prefHeight="40.0" prefWidth="253.0" />
-                              <TextField alignment="CENTER" prefHeight="40.0" prefWidth="253.0" text="TS EN ISO 17638" />
-                              <TextField alignment="CENTER" prefHeight="40.0" prefWidth="253.0" text="TS EN ISO 23278 Class B" />
+                              <TextField fx:id="muayenestandarti" alignment="CENTER" prefHeight="40.0" prefWidth="253.0" text="TS EN ISO 17638" />
+                              <TextField fx:id="degerlendirmestandarti" alignment="CENTER" prefHeight="40.0" prefWidth="253.0" text="TS EN ISO 23278 Class B" />
                            </children>
                         </VBox>
                         <VBox prefHeight="200.0" prefWidth="200.0">
                            <children>
-                              <TextField prefHeight="40.0" style="-fx-background-color: #FFD1CD; -fx-border-color: #FFFFFF;" text="Muayane Prosedürü" />
+                              <TextField prefHeight="40.0" style="-fx-background-color: #FFD1CD; -fx-border-color: #FFFFFF;" text="Muayene Prosedürü" />
                               <TextField layoutX="10.0" layoutY="10.0" prefHeight="40.0" style="-fx-background-color: #FFD1CD; -fx-border-color: #FFFFFF;" text="Muayaene Kapsamı" />
                               <TextField layoutX="10.0" layoutY="10.0" prefHeight="40.0" style="-fx-background-color: #FFD1CD; -fx-border-color: #FFFFFF;" text="Resim No" />
                               <TextField layoutX="10.0" layoutY="50.0" prefHeight="40.0" style="-fx-background-color: #FFD1CD; -fx-border-color: #FFFFFF;" text="Yüzey Durumu" />
@@ -96,9 +96,9 @@
                         </VBox>
                         <VBox alignment="CENTER" prefHeight="202.0" prefWidth="253.0">
                            <children>
-                              <TextField alignment="CENTER" prefHeight="40.0" prefWidth="240.0" text="P-101-004" />
-                              <TextField alignment="CENTER" prefHeight="40.0" prefWidth="220.0" text="100%" />
-                              <TextField alignment="CENTER" prefHeight="40.0" prefWidth="240.0" text="-" />
+                              <TextField fx:id="muayeneprosedürü" alignment="CENTER" prefHeight="40.0" prefWidth="240.0" text="P-101-004" />
+                              <TextField fx:id="muayenekapsami" alignment="CENTER" prefHeight="40.0" prefWidth="220.0" text="100%" />
+                              <TextField fx:id="resimno" alignment="CENTER" prefHeight="40.0" prefWidth="240.0" text="-" />
                               <ChoiceBox fx:id="yzydrm" prefHeight="40.0" prefWidth="253.0" style="-fx-background-color: #FFFFFF;" />
                               <ChoiceBox fx:id="mynsm" prefHeight="40.0" prefWidth="253.0" style="-fx-background-color: #FFFFFF;" />
                            </children>
@@ -114,8 +114,8 @@
                         </VBox>
                         <VBox alignment="TOP_RIGHT" prefHeight="202.0" prefWidth="253.0">
                            <children>
-                              <TextField alignment="CENTER" prefHeight="40.0" prefWidth="240.0" text="1" />
-                              <TextField fx:id="rapor_no" alignment="CENTER" prefHeight="40.0" prefWidth="240.0" />
+                              <TextField fx:id="sayfano" alignment="CENTER" prefHeight="40.0" prefWidth="240.0" text="1" />
+                              <TextField fx:id="raporno" alignment="CENTER" prefHeight="40.0" prefWidth="240.0" />
                               <TextField fx:id="rapor_tarihi" alignment="CENTER" prefHeight="40.0" prefWidth="240.0" />
                               <TextField fx:id="isemri" alignment="CENTER" layoutX="10.0" layoutY="50.0" prefHeight="40.0" prefWidth="240.0" />
                               <TextField fx:id="teklifno" alignment="CENTER" layoutX="10.0" layoutY="90.0" prefHeight="40.0" prefWidth="240.0" />
@@ -158,12 +158,12 @@
                         </VBox>
                         <VBox prefHeight="242.0" prefWidth="253.0">
                            <children>
-                              <TextField alignment="CENTER" prefHeight="40.0" prefWidth="240.0" text="KAYNAK+HAZ" />
+                              <TextField fx:id="muayenebölgesi" alignment="CENTER" prefHeight="40.0" prefWidth="240.0" text="KAYNAK+HAZ" />
                               <ChoiceBox fx:id="kmtp" prefHeight="40.0" prefWidth="253.0" style="-fx-background-color: #FFFFFF;" />
-                              <TextField alignment="CENTER" prefHeight="40.0" prefWidth="240.0" text="1200 Lux" />
-                              <TextField alignment="CENTER" prefHeight="40.0" prefWidth="240.0" />
-                              <TextField alignment="CENTER" layoutX="10.0" layoutY="130.0" prefHeight="40.0" prefWidth="240.0" />
-                              <TextField alignment="CENTER" layoutX="10.0" layoutY="170.0" prefHeight="40.0" prefWidth="240.0" />
+                              <TextField fx:id="luxmetre" alignment="CENTER" prefHeight="40.0" prefWidth="240.0" text="1200 Lux" />
+                              <TextField fx:id="muayeneortami" alignment="CENTER" prefHeight="40.0" prefWidth="240.0" />
+                              <TextField fx:id="miknatisgiderimi" alignment="CENTER" layoutX="10.0" layoutY="130.0" prefHeight="40.0" prefWidth="240.0" />
+                              <TextField fx:id="isilislem" alignment="CENTER" layoutX="10.0" layoutY="170.0" prefHeight="40.0" prefWidth="240.0" />
                            </children>
                         </VBox>
                         <VBox prefHeight="242.0" prefWidth="200.0" style="-fx-background-color: #FFD1CD;">
@@ -177,11 +177,11 @@
                         </VBox>
                         <VBox alignment="TOP_RIGHT" prefHeight="242.0" prefWidth="253.0">
                            <children>
-                              <TextField alignment="CENTER" prefHeight="40.0" prefWidth="240.0" />
-                              <TextField alignment="CENTER" prefHeight="80.0" prefWidth="240.0" text="3.2 kA/m" />
-                              <TextField alignment="CENTER" prefHeight="40.0" prefWidth="240.0" text="TAŞLANMIŞ / GRINDING" />
-                              <TextField alignment="CENTER" layoutX="10.0" layoutY="90.0" prefHeight="40.0" prefWidth="240.0" text="***" />
-                              <TextField alignment="CENTER" layoutX="10.0" layoutY="130.0" prefHeight="40.0" prefWidth="240.0" />
+                              <TextField fx:id="yüzeysicaklik" alignment="CENTER" prefHeight="40.0" prefWidth="240.0" />
+                              <TextField fx:id="muayenebölgesindekialanşiddeti" alignment="CENTER" prefHeight="80.0" prefWidth="240.0" text="3.2 kA/m" />
+                              <TextField fx:id="surface" alignment="CENTER" prefHeight="40.0" prefWidth="240.0" text="TAŞLANMIŞ / GRINDING" />
+                              <TextField fx:id="isikcihazitanimi" alignment="CENTER" layoutX="10.0" layoutY="90.0" prefHeight="40.0" prefWidth="240.0" text="***" />
+                              <TextField fx:id="kaldirmatesti" alignment="CENTER" layoutX="10.0" layoutY="130.0" prefHeight="40.0" prefWidth="240.0" />
                            </children>
                         </VBox>
                      </children>
@@ -197,7 +197,7 @@
                               <Image url="@app/icon/akaynağı.png" />
                            </image>
                         </ImageView>
-                        <CheckBox alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" translateX="200.0" />
+                        <CheckBox fx:id="akaynagi" alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" translateX="200.0" />
                      </children>
                   </VBox>
                   <VBox layoutX="10.0" layoutY="10.0" prefHeight="160.0" prefWidth="300.0">
@@ -210,7 +210,7 @@
                               <Insets />
                            </VBox.margin>
                         </ImageView>
-                        <CheckBox alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" translateX="250.0">
+                        <CheckBox fx:id="bkaynagi" alignment="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" translateX="250.0">
                            <VBox.margin>
                               <Insets />
                            </VBox.margin>
@@ -251,9 +251,9 @@
                   </VBox>
                   <VBox prefHeight="200.0" prefWidth="1060.0">
                      <children>
-                        <TextField prefHeight="40.0" text="Standarttan sapma yoktur." />
+                        <TextField fx:id="standartsapma" prefHeight="40.0" text="Standarttan sapma yoktur." />
                         <TextField fx:id="muayene_tarihi" layoutX="10.0" layoutY="10.0" prefHeight="40.0" />
-                        <TextField layoutX="10.0" layoutY="10.0" prefHeight="40.0" />
+                        <TextField fx:id="aciklamaveekler" layoutX="10.0" layoutY="10.0" prefHeight="40.0" />
                      </children>
                   </VBox>
                </children>
@@ -264,153 +264,153 @@
                   <VBox prefHeight="495.0" prefWidth="90.0">
                      <children>
                         <TextField prefHeight="33.0" style="-fx-background-color: #FFD1CD; -fx-border-color: #FFFFFF;" text="Sıra No" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="33.0" text="1" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="33.0" text="2" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="35.0" prefHeight="33.0" text="3" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="33.0" text="4" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="35.0" prefHeight="33.0" text="5" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="60.0" prefHeight="33.0" text="6" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="85.0" prefHeight="33.0" text="7" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="110.0" prefHeight="33.0" text="8" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="135.0" prefHeight="33.0" text="9" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="160.0" prefHeight="33.0" text="10" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="185.0" prefHeight="33.0" text="11" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="235.0" prefHeight="33.0" text="12" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="260.0" prefHeight="33.0" text="13" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="285.0" prefHeight="33.0" text="14" />
+                        <TextField fx:id="sirano1" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="33.0" text="1" />
+                        <TextField fx:id="sirano2" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="33.0" text="2" />
+                        <TextField fx:id="sirano3" alignment="CENTER" layoutX="10.0" layoutY="35.0" prefHeight="33.0" text="3" />
+                        <TextField fx:id="sirano4" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="33.0" text="4" />
+                        <TextField fx:id="sirano5" alignment="CENTER" layoutX="10.0" layoutY="35.0" prefHeight="33.0" text="5" />
+                        <TextField fx:id="sirano6" alignment="CENTER" layoutX="10.0" layoutY="60.0" prefHeight="33.0" text="6" />
+                        <TextField fx:id="sirano7" alignment="CENTER" layoutX="10.0" layoutY="85.0" prefHeight="33.0" text="7" />
+                        <TextField fx:id="sirano8" alignment="CENTER" layoutX="10.0" layoutY="110.0" prefHeight="33.0" text="8" />
+                        <TextField fx:id="sirano9" alignment="CENTER" layoutX="10.0" layoutY="135.0" prefHeight="33.0" text="9" />
+                        <TextField fx:id="sirano10" alignment="CENTER" layoutX="10.0" layoutY="160.0" prefHeight="33.0" text="10" />
+                        <TextField fx:id="sirano11" alignment="CENTER" layoutX="10.0" layoutY="185.0" prefHeight="33.0" text="11" />
+                        <TextField fx:id="sirano12" alignment="CENTER" layoutX="10.0" layoutY="235.0" prefHeight="33.0" text="12" />
+                        <TextField fx:id="sirano13" alignment="CENTER" layoutX="10.0" layoutY="260.0" prefHeight="33.0" text="13" />
+                        <TextField fx:id="sirano14" alignment="CENTER" layoutX="10.0" layoutY="285.0" prefHeight="33.0" text="14" />
                      </children>
                   </VBox>
                   <VBox prefHeight="495.0" prefWidth="230.0">
                      <children>
                         <TextField alignment="CENTER" prefHeight="33.0" style="-fx-background-color: #FFD1CD; -fx-border-color: #FFFFFF;" stylesheets="@app.tersane/newCascadeStyleSheet.css" text="Kaynak / Parça No" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="35.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="35.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="60.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="85.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="110.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="135.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="160.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="185.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="235.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="260.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="285.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
+                        <TextField fx:id="kpn1" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
+                        <TextField fx:id="kpn2" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
+                        <TextField fx:id="kpn3" alignment="CENTER" layoutX="10.0" layoutY="35.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
+                        <TextField fx:id="kpn4" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
+                        <TextField fx:id="kpn5" alignment="CENTER" layoutX="10.0" layoutY="35.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
+                        <TextField fx:id="kpn6" alignment="CENTER" layoutX="10.0" layoutY="60.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
+                        <TextField fx:id="kpn7" alignment="CENTER" layoutX="10.0" layoutY="85.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
+                        <TextField fx:id="kpn8" alignment="CENTER" layoutX="10.0" layoutY="110.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
+                        <TextField fx:id="kpn9" alignment="CENTER" layoutX="10.0" layoutY="135.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
+                        <TextField fx:id="kpn10" alignment="CENTER" layoutX="10.0" layoutY="160.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
+                        <TextField fx:id="kpn11" alignment="CENTER" layoutX="10.0" layoutY="185.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
+                        <TextField fx:id="kpn12" alignment="CENTER" layoutX="10.0" layoutY="235.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
+                        <TextField fx:id="kpn13" alignment="CENTER" layoutX="10.0" layoutY="260.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
+                        <TextField fx:id="kpn14" alignment="CENTER" layoutX="10.0" layoutY="285.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
                      </children>
                   </VBox>
                   <VBox prefHeight="495.0" prefWidth="140.0">
                      <children>
                         <TextField alignment="CENTER" prefHeight="33.0" prefWidth="98.0" style="-fx-background-color: #FFD1CD; -fx-border-color: #FFFFFF;" stylesheets="@app.tersane/newCascadeStyleSheet.css" text="Kontrol Uzun." />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="35.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="35.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="60.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="85.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="110.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="135.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="160.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="185.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="235.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="260.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="285.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
+                        <TextField fx:id="ku1" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
+                        <TextField fx:id="ku2" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
+                        <TextField fx:id="ku3" alignment="CENTER" layoutX="10.0" layoutY="35.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
+                        <TextField fx:id="ku4" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
+                        <TextField fx:id="ku5" alignment="CENTER" layoutX="10.0" layoutY="35.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
+                        <TextField fx:id="ku6" alignment="CENTER" layoutX="10.0" layoutY="60.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
+                        <TextField fx:id="ku7" alignment="CENTER" layoutX="10.0" layoutY="85.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
+                        <TextField fx:id="ku8" alignment="CENTER" layoutX="10.0" layoutY="110.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
+                        <TextField fx:id="ku9" alignment="CENTER" layoutX="10.0" layoutY="135.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
+                        <TextField fx:id="ku10" alignment="CENTER" layoutX="10.0" layoutY="160.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
+                        <TextField fx:id="ku11" alignment="CENTER" layoutX="10.0" layoutY="185.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
+                        <TextField fx:id="ku12" alignment="CENTER" layoutX="10.0" layoutY="235.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
+                        <TextField fx:id="ku13" alignment="CENTER" layoutX="10.0" layoutY="260.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
+                        <TextField fx:id="ku14" alignment="CENTER" layoutX="10.0" layoutY="285.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
                      </children>
                   </VBox>
                   <VBox prefHeight="495.0" prefWidth="180.0" stylesheets="@app.tersane/newCascadeStyleSheet.css">
                      <children>
                         <TextField alignment="CENTER" prefHeight="33.0" prefWidth="98.0" style="-fx-background-color: #FFD1CD; -fx-border-color: #FFFFFF;" text="Kaynak Yön." />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="35.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="35.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="60.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="85.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="110.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="135.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="160.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="185.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="235.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="260.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="285.0" prefHeight="33.0" />
+                        <TextField fx:id="ky1" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="33.0" />
+                        <TextField fx:id="ky2" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="33.0" />
+                        <TextField fx:id="ky3" alignment="CENTER" layoutX="10.0" layoutY="35.0" prefHeight="33.0" />
+                        <TextField fx:id="ky4" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="33.0" />
+                        <TextField fx:id="ky5" alignment="CENTER" layoutX="10.0" layoutY="35.0" prefHeight="33.0" />
+                        <TextField fx:id="ky6" alignment="CENTER" layoutX="10.0" layoutY="60.0" prefHeight="33.0" />
+                        <TextField fx:id="ky7" alignment="CENTER" layoutX="10.0" layoutY="85.0" prefHeight="33.0" />
+                        <TextField fx:id="ky8" alignment="CENTER" layoutX="10.0" layoutY="110.0" prefHeight="33.0" />
+                        <TextField fx:id="ky9" alignment="CENTER" layoutX="10.0" layoutY="135.0" prefHeight="33.0" />
+                        <TextField fx:id="ky10" alignment="CENTER" layoutX="10.0" layoutY="160.0" prefHeight="33.0" />
+                        <TextField fx:id="ky11" alignment="CENTER" layoutX="10.0" layoutY="185.0" prefHeight="33.0" />
+                        <TextField fx:id="ky12" alignment="CENTER" layoutX="10.0" layoutY="235.0" prefHeight="33.0" />
+                        <TextField fx:id="ky13" alignment="CENTER" layoutX="10.0" layoutY="260.0" prefHeight="33.0" />
+                        <TextField fx:id="ky14" alignment="CENTER" layoutX="10.0" layoutY="285.0" prefHeight="33.0" />
                      </children>
                   </VBox>
                   <VBox prefHeight="495.0" prefWidth="120.0">
                      <children>
                         <TextField alignment="CENTER" prefHeight="33.0" prefWidth="98.0" style="-fx-background-color: #FFD1CD; -fx-border-color: #FFFFFF;" stylesheets="@app.tersane/newCascadeStyleSheet.css" text="Kalınlık(mm)" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="35.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="35.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="60.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="85.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="110.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="135.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="160.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="185.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="235.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="260.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="285.0" prefHeight="33.0" />
+                        <TextField fx:id="kalinlik1" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
+                        <TextField fx:id="kalinlik2" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
+                        <TextField fx:id="kalinlik3" alignment="CENTER" layoutX="10.0" layoutY="35.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
+                        <TextField fx:id="kalinlik4" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
+                        <TextField fx:id="kalinlik5" alignment="CENTER" layoutX="10.0" layoutY="35.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
+                        <TextField fx:id="kalinlik6" alignment="CENTER" layoutX="10.0" layoutY="60.0" prefHeight="33.0" stylesheets="@app.tersane/newCascadeStyleSheet.css" />
+                        <TextField fx:id="kalinlik7" alignment="CENTER" layoutX="10.0" layoutY="85.0" prefHeight="33.0" />
+                        <TextField fx:id="kalinlik8" alignment="CENTER" layoutX="10.0" layoutY="110.0" prefHeight="33.0" />
+                        <TextField fx:id="kalinlik9" alignment="CENTER" layoutX="10.0" layoutY="135.0" prefHeight="33.0" />
+                        <TextField fx:id="kalinlik10" alignment="CENTER" layoutX="10.0" layoutY="160.0" prefHeight="33.0" />
+                        <TextField fx:id="kalinlik11" alignment="CENTER" layoutX="10.0" layoutY="185.0" prefHeight="33.0" />
+                        <TextField fx:id="kalinlik12" alignment="CENTER" layoutX="10.0" layoutY="235.0" prefHeight="33.0" />
+                        <TextField fx:id="kalinlik13" alignment="CENTER" layoutX="10.0" layoutY="260.0" prefHeight="33.0" />
+                        <TextField fx:id="kalinlik14" alignment="CENTER" layoutX="10.0" layoutY="285.0" prefHeight="33.0" />
                      </children>
                   </VBox>
                   <VBox prefHeight="495.0" prefWidth="150.0">
                      <children>
                         <TextField alignment="CENTER" prefHeight="33.0" prefWidth="98.0" style="-fx-background-color: #FFD1CD; -fx-border-color: #FFFFFF;" text="Çap(mm)" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="35.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="35.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="60.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="85.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="110.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="135.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="160.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="185.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="235.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="260.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="285.0" prefHeight="33.0" />
+                        <TextField fx:id="cap1" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="33.0" />
+                        <TextField fx:id="cap2" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="33.0" />
+                        <TextField fx:id="cap3" alignment="CENTER" layoutX="10.0" layoutY="35.0" prefHeight="33.0" />
+                        <TextField fx:id="cap4" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="33.0" />
+                        <TextField fx:id="cap5" alignment="CENTER" layoutX="10.0" layoutY="35.0" prefHeight="33.0" />
+                        <TextField fx:id="cap6" alignment="CENTER" layoutX="10.0" layoutY="60.0" prefHeight="33.0" />
+                        <TextField fx:id="cap7" alignment="CENTER" layoutX="10.0" layoutY="85.0" prefHeight="33.0" />
+                        <TextField fx:id="cap8" alignment="CENTER" layoutX="10.0" layoutY="110.0" prefHeight="33.0" />
+                        <TextField fx:id="cap9" alignment="CENTER" layoutX="10.0" layoutY="135.0" prefHeight="33.0" />
+                        <TextField fx:id="cap10" alignment="CENTER" layoutX="10.0" layoutY="160.0" prefHeight="33.0" />
+                        <TextField fx:id="cap11" alignment="CENTER" layoutX="10.0" layoutY="185.0" prefHeight="33.0" />
+                        <TextField fx:id="cap12" alignment="CENTER" layoutX="10.0" layoutY="235.0" prefHeight="33.0" />
+                        <TextField fx:id="cap13" alignment="CENTER" layoutX="10.0" layoutY="260.0" prefHeight="33.0" />
+                        <TextField fx:id="cap14" alignment="CENTER" layoutX="10.0" layoutY="285.0" prefHeight="33.0" />
                      </children>
                   </VBox>
                   <VBox prefHeight="495.0" prefWidth="160.0">
                      <children>
                         <TextField alignment="CENTER" prefHeight="33.0" prefWidth="98.0" style="-fx-background-color: #FFD1CD; -fx-border-color: #FFFFFF;" text="Hata Tipi" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="35.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="35.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="60.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="85.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="110.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="135.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="160.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="185.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="235.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="260.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="285.0" prefHeight="33.0" />
+                        <TextField fx:id="hatatipi1" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="33.0" />
+                        <TextField fx:id="hatatipi2" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="33.0" />
+                        <TextField fx:id="hatatipi3" alignment="CENTER" layoutX="10.0" layoutY="35.0" prefHeight="33.0" />
+                        <TextField fx:id="hatatipi4" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="33.0" />
+                        <TextField fx:id="hatatipi5" alignment="CENTER" layoutX="10.0" layoutY="35.0" prefHeight="33.0" />
+                        <TextField fx:id="hatatipi6" alignment="CENTER" layoutX="10.0" layoutY="60.0" prefHeight="33.0" />
+                        <TextField fx:id="hatatipi7" alignment="CENTER" layoutX="10.0" layoutY="85.0" prefHeight="33.0" />
+                        <TextField fx:id="hatatipi8" alignment="CENTER" layoutX="10.0" layoutY="110.0" prefHeight="33.0" />
+                        <TextField fx:id="hatatipi9" alignment="CENTER" layoutX="10.0" layoutY="135.0" prefHeight="33.0" />
+                        <TextField fx:id="hatatipi10" alignment="CENTER" layoutX="10.0" layoutY="160.0" prefHeight="33.0" />
+                        <TextField fx:id="hatatipi11" alignment="CENTER" layoutX="10.0" layoutY="185.0" prefHeight="33.0" />
+                        <TextField fx:id="hatatipi12" alignment="CENTER" layoutX="10.0" layoutY="235.0" prefHeight="33.0" />
+                        <TextField fx:id="hatatipi13" alignment="CENTER" layoutX="10.0" layoutY="260.0" prefHeight="33.0" />
+                        <TextField fx:id="hatatipi14" alignment="CENTER" layoutX="10.0" layoutY="285.0" prefHeight="33.0" />
                      </children>
                   </VBox>
                   <VBox prefHeight="495.0" prefWidth="200.0">
                      <children>
                         <TextField alignment="CENTER" prefHeight="33.0" prefWidth="98.0" style="-fx-background-color: #FFD1CD; -fx-border-color: #FFFFFF;" text="Hatanın Yeri" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="35.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="35.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="60.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="85.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="110.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="135.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="160.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="185.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="235.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="260.0" prefHeight="33.0" />
-                        <TextField alignment="CENTER" layoutX="10.0" layoutY="285.0" prefHeight="33.0" />
+                        <TextField fx:id="hatayeri1" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="33.0" />
+                        <TextField fx:id="hatayeri2" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="33.0" />
+                        <TextField fx:id="hatayeri3" alignment="CENTER" layoutX="10.0" layoutY="35.0" prefHeight="33.0" />
+                        <TextField fx:id="hatayeri4" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="33.0" />
+                        <TextField fx:id="hatayeri5" alignment="CENTER" layoutX="10.0" layoutY="35.0" prefHeight="33.0" />
+                        <TextField fx:id="hatayeri6" alignment="CENTER" layoutX="10.0" layoutY="60.0" prefHeight="33.0" />
+                        <TextField fx:id="hatayeri7" alignment="CENTER" layoutX="10.0" layoutY="85.0" prefHeight="33.0" />
+                        <TextField fx:id="hatayeri8" alignment="CENTER" layoutX="10.0" layoutY="110.0" prefHeight="33.0" />
+                        <TextField fx:id="hatayeri9" alignment="CENTER" layoutX="10.0" layoutY="135.0" prefHeight="33.0" />
+                        <TextField fx:id="hatayeri10" alignment="CENTER" layoutX="10.0" layoutY="160.0" prefHeight="33.0" />
+                        <TextField fx:id="hatayeri11" alignment="CENTER" layoutX="10.0" layoutY="185.0" prefHeight="33.0" />
+                        <TextField fx:id="hatayeri12" alignment="CENTER" layoutX="10.0" layoutY="235.0" prefHeight="33.0" />
+                        <TextField fx:id="hatayeri13" alignment="CENTER" layoutX="10.0" layoutY="260.0" prefHeight="33.0" />
+                        <TextField fx:id="hatayeri14" alignment="CENTER" layoutX="10.0" layoutY="285.0" prefHeight="33.0" />
                      </children>
                   </VBox>
                   <VBox prefHeight="200.0" prefWidth="86.0">
@@ -423,13 +423,13 @@
                         <ComboBox fx:id="sonuc5" layoutX="10.0" layoutY="109.0" prefHeight="33.0" prefWidth="150.0" style="-fx-background-color: #FFFFFF;" />
                         <ComboBox fx:id="sonuc6" layoutX="10.0" layoutY="10.0" prefHeight="33.0" prefWidth="150.0" style="-fx-background-color: #FFFFFF;" />
                         <ComboBox fx:id="sonuc7" layoutX="10.0" layoutY="43.0" prefHeight="33.0" prefWidth="150.0" style="-fx-background-color: #FFFFFF;" />
-                        <ComboBox layoutX="10.0" layoutY="76.0" prefHeight="33.0" prefWidth="150.0" style="-fx-background-color: #FFFFFF;" />
-                        <ComboBox layoutX="10.0" layoutY="109.0" prefHeight="33.0" prefWidth="150.0" style="-fx-background-color: #FFFFFF;" />
-                        <ComboBox layoutX="10.0" layoutY="142.0" prefHeight="33.0" prefWidth="150.0" style="-fx-background-color: #FFFFFF;" />
-                        <ComboBox layoutX="10.0" layoutY="175.0" prefHeight="33.0" prefWidth="150.0" style="-fx-background-color: #FFFFFF;" />
-                        <ComboBox layoutX="10.0" layoutY="208.0" prefHeight="33.0" prefWidth="150.0" style="-fx-background-color: #FFFFFF;" />
-                        <ComboBox layoutX="10.0" layoutY="340.0" prefHeight="33.0" prefWidth="150.0" style="-fx-background-color: #FFFFFF;" />
-                        <ComboBox layoutX="10.0" layoutY="373.0" prefHeight="33.0" prefWidth="150.0" style="-fx-background-color: #FFFFFF;" />
+                        <ComboBox fx:id="sonuc8" layoutX="10.0" layoutY="76.0" prefHeight="33.0" prefWidth="150.0" style="-fx-background-color: #FFFFFF;" />
+                        <ComboBox fx:id="sonuc9" layoutX="10.0" layoutY="109.0" prefHeight="33.0" prefWidth="150.0" style="-fx-background-color: #FFFFFF;" />
+                        <ComboBox fx:id="sonuc10" layoutX="10.0" layoutY="142.0" prefHeight="33.0" prefWidth="150.0" style="-fx-background-color: #FFFFFF;" />
+                        <ComboBox fx:id="sonuc11" layoutX="10.0" layoutY="175.0" prefHeight="33.0" prefWidth="150.0" style="-fx-background-color: #FFFFFF;" />
+                        <ComboBox fx:id="sonuc12" layoutX="10.0" layoutY="208.0" prefHeight="33.0" prefWidth="150.0" style="-fx-background-color: #FFFFFF;" />
+                        <ComboBox fx:id="sonuc13" layoutX="10.0" layoutY="340.0" prefHeight="33.0" prefWidth="150.0" style="-fx-background-color: #FFFFFF;" />
+                        <ComboBox fx:id="sonuc14" layoutX="10.0" layoutY="373.0" prefHeight="33.0" prefWidth="150.0" style="-fx-background-color: #FFFFFF;" />
                      </children>
                   </VBox>
                </children>
