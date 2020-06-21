@@ -218,9 +218,9 @@
                         </HBox>
                      </children>
                   </VBox>
-                  <VBox prefWidth="400.0" styleClass="fill-borderred">
+                  <VBox prefWidth="400.0">
                      <children>
-                        <TableView fx:id="yüzeyler_table" prefWidth="200.0" styleClass="fill-borderwhite">
+                        <TableView fx:id="yüzeyler_table" prefWidth="200.0" styleClass="fill-borderred">
                           <columns>
                             <TableColumn fx:id="id" prefWidth="89.0" text="ID" />
                               <TableColumn fx:id="yuzey_durumu" prefWidth="309.0" text="Yüzey Durumu" />

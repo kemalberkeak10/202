@@ -22,7 +22,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import tersane.RaporlarController;
 import tersane.müsteri;
@@ -394,11 +396,13 @@ public class Yeni_raporController implements Initializable {
     @FXML
     private TextField hatayeri14;
     @FXML
-    private TextField muayenead;
-    @FXML
     private Button exportPDF;
     
     public int rapornumarasi = 1000;
+    @FXML
+    private ScrollPane scrollpane;
+    @FXML
+    private AnchorPane anchorpane;
 
        
 
@@ -444,9 +448,9 @@ public class Yeni_raporController implements Initializable {
             Logger.getLogger(Yeni_raporController.class.getName()).log(Level.SEVERE, null, ex);
         }
        
-      this.operatör_adsoyad.setText(String.valueOf(RaporlarController.secilen1));
-        this.degerlendiren_adsoyad.setText(String.valueOf(RaporlarController.secilen2));
-        this.onay_adsoyad.setText(String.valueOf(RaporlarController.secilen3));
+      this.operatör_adsoyad.setText(String.valueOf(RaporlarController.secilenOp));
+        this.degerlendiren_adsoyad.setText(String.valueOf(RaporlarController.secilenDe));
+        this.onay_adsoyad.setText(String.valueOf(RaporlarController.secilenOn));
        this.operatör_seviye.setText(RaporlarController.secilenOpSeviye);
         this.degerlendiren_seviye.setText(RaporlarController.secilenDeSeviye);
         this.onay_seviye.setText(RaporlarController.secilenOnSeviye);
@@ -459,7 +463,7 @@ public class Yeni_raporController implements Initializable {
          this.muayene_tarihi.setText(String.valueOf(RaporlarController.secilentarih));
         
         chz.setOnAction(e->{
-        loadOtherCihazInformation();
+        Cihaz_Bilgilerini_Getir();
                
         });
        
@@ -469,8 +473,8 @@ public class Yeni_raporController implements Initializable {
         
         try {
            Export_Excell ex = new Export_Excell();
-
-            loadCihaz();
+           Export_PDF pd = new Export_PDF();
+            Cihaz_Bilgileri_Yükle();
             
              
             
@@ -698,14 +702,21 @@ public class Yeni_raporController implements Initializable {
                     Logger.getLogger(RaporlarController.class.getName()).log(Level.SEVERE, null, ex1);
                 }
             });
+            exportPDF.setOnAction(e->{
+                
+                pd.pdf(anchorpane,String.valueOf(rapornumarasi));
+            }); 
+            
         } catch (SQLException ex1) {
             Logger.getLogger(RaporlarController.class.getName()).log(Level.SEVERE, null, ex1);
         }
+        
+        
         }
     
 
     
-    public void loadCihaz() throws SQLException{
+    public void Cihaz_Bilgileri_Yükle() throws SQLException{
         database dao = new database();
         String sql = "SELECT cihaz from ekipmanlar";
         chz.getItems().addAll(dao.showEkipman(sql));
@@ -713,10 +724,10 @@ public class Yeni_raporController implements Initializable {
     }
    
 
-    private void loadOtherCihazInformation() {
+    private void Cihaz_Bilgilerini_Getir() {
         
         secili_ekipman = chz.getSelectionModel().getSelectedItem();
-        ekipman e = database.getOtherCihazInformation(secili_ekipman);
+        ekipman e = database.ekipmanbilgileri(secili_ekipman);
         kutupmesafesi.setText(e.kutup_mProperty().getValue());
         tasiyiciortam.setText(e.t_ortamProperty().getValue());
        miknatislamateknigi.setText(e.hesaplama_tProperty().getValue());

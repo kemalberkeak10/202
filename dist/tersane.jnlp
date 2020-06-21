@@ -21,11 +21,12 @@
     <jar href="lib\junit-4.12.jar" size="314932" download="eager" />
     <jar href="lib\log4j-1.2.17.jar" size="489884" download="eager" />
     <jar href="lib\mysql-connector-java-5.1.48-bin.jar" size="1006959" download="eager" />
+    <jar href="lib\pdfbox-2.0.19.jar" size="2715618" download="eager" />
     <jar href="lib\poi-4.1.2.jar" size="2915337" download="eager" />
     <jar href="lib\poi-ooxml-4.1.2.jar" size="1888231" download="eager" />
     <jar href="lib\poi-ooxml-schemas-4.1.2.jar" size="7912488" download="eager" />
     <jar href="lib\xmlbeans-3.1.0.jar" size="2579738" download="eager" />
-    <jar href="tersane.jar" size="574231" download="eager" />
+    <jar href="tersane.jar" size="575470" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="tersane" >
     <param name="requiredFXVersion" value="8.0+"/>

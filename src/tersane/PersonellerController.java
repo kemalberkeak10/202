@@ -246,7 +246,7 @@ public class PersonellerController implements Initializable {
 
     @FXML
     private void personel_ekle(ActionEvent event) {
-         String id=persid.getText();
+             String id=persid.getText();
             String ad=persad.getText();
             String soyad=perssoy.getText();
             String seviye=perlev.getText();

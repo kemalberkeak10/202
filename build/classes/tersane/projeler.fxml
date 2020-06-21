@@ -236,7 +236,7 @@
                            </styleClass>
                         </VBox>
                      </children></HBox>
-                  <Label alignment="CENTER" layoutX="497.0" layoutY="62.0" prefHeight="100.0" prefWidth="930.0" text="PROEJELER" textAlignment="CENTER" textFill="#d81d23" AnchorPane.leftAnchor="440.0" AnchorPane.topAnchor="0.0">
+                  <Label alignment="CENTER" layoutX="497.0" layoutY="62.0" prefHeight="100.0" prefWidth="930.0" text="PROJELER" textAlignment="CENTER" textFill="#d81d23" AnchorPane.leftAnchor="440.0" AnchorPane.topAnchor="0.0">
                      <font>
                         <Font size="32.0" />
                      </font>

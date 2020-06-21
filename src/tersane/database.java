@@ -45,7 +45,7 @@ public class database {
         try { 
             Class.forName("com.mysql.jdbc.Driver");
             con = (Connection) DriverManager.getConnection(url, kullanici_adi, parola);
-            System.out.println("Bağlantı Başarılı...");
+         //   System.out.println("Bağlantı Başarılı...");
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -490,7 +490,7 @@ public class database {
 		
 	return list;
     }
-        public static ekipman getOtherCihazInformation(String cihazAd){
+        public static ekipman ekipmanbilgileri(String cihazAd){
         ekipman ek = null;
         try {
             String query = "SELECT * from ekipmanlar WHERE cihaz= ?";
@@ -531,7 +531,7 @@ public class database {
           }
         
         
-         public static ObservableList<personel> choiceCalisan(){
+         public static ObservableList<personel> Calisan_Sec(){
 	ObservableList<personel> list = FXCollections.observableArrayList();
         String query = "SELECT * from personel";
 	try {
@@ -549,7 +549,7 @@ public class database {
 		
 	return list;
 	}
-          public static ObservableList<müsteri> secMüsteri(){
+          public static ObservableList<müsteri> Müsteri_Sec(){
 	ObservableList<müsteri> mlist = FXCollections.observableArrayList();
         String query = "SELECT * from müsteriler";
 	try {

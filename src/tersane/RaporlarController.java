@@ -69,9 +69,9 @@ public class RaporlarController implements Initializable {
         private DatePicker tarih;
     
     static String b,c;
-    static personel secilen1;
-    static personel secilen2;
-    static personel secilen3;
+    static personel secilenOp;
+    static personel secilenDe;
+    static personel secilenOn;
     static müsteri müsteri1 ;
     static String secilenOpSeviye;
     static String secilenDeSeviye;
@@ -271,31 +271,31 @@ public class RaporlarController implements Initializable {
         }
     }
     public void secilenCalisan(){
-        secilen1 = operatör.getSelectionModel().getSelectedItem();
+        secilenOp = operatör.getSelectionModel().getSelectedItem();
       
                
-        b = String.valueOf(secilen1.adProperty().get());
+        b = String.valueOf(secilenOp.adProperty().get());
         
                 
-        c = String.valueOf(secilen1.soyadProperty().get());
+        c = String.valueOf(secilenOp.soyadProperty().get());
   
 
         secilenOpSeviye=database.getSeviye(b,c);
        
-        secilen2 = değerlendiren.getSelectionModel().getSelectedItem();
+        secilenDe = değerlendiren.getSelectionModel().getSelectedItem();
       
         
-        b = String.valueOf(secilen2.adProperty().get());
+        b = String.valueOf(secilenDe.adProperty().get());
                
-        c = String.valueOf(secilen2.soyadProperty().get());
+        c = String.valueOf(secilenDe.soyadProperty().get());
           
         secilenDeSeviye=database.getSeviye(b,c);
-        secilen3 = onay.getSelectionModel().getSelectedItem();
+        secilenOn = onay.getSelectionModel().getSelectedItem();
   
         
-        b = String.valueOf(secilen3.adProperty().get());
+        b = String.valueOf(secilenOn.adProperty().get());
        
-        c = String.valueOf(secilen3.soyadProperty().get());
+        c = String.valueOf(secilenOn.soyadProperty().get());
       
         secilenOnSeviye=database.getSeviye(b,c);
         
@@ -307,26 +307,27 @@ public class RaporlarController implements Initializable {
     
          
     database da = new database();
+    
     @FXML
     private void operatorset(MouseEvent event) {
-         operatör.setItems(da.choiceCalisan());
+         operatör.setItems(da.Calisan_Sec());
     }
 
     @FXML
     private void degerlendirenset(MouseEvent event) {
-        değerlendiren.setItems(da.choiceCalisan());
+        değerlendiren.setItems(da.Calisan_Sec());
     }
 
     @FXML
     private void onayset(MouseEvent event) {
-        onay.setItems(da.choiceCalisan());
+        onay.setItems(da.Calisan_Sec());
     }
 
     @FXML
     private void müsteriset(MouseEvent event) {
         
           
-           mstr.setItems(da.secMüsteri());
+           mstr.setItems(da.Müsteri_Sec());
           
     }
 

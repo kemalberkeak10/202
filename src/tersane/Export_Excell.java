@@ -30,23 +30,23 @@ public class Export_Excell {
            String muayeneBölgesi , String akimTipi, String luxMetre, String muayeneOrtami, String miknatisGiderimi , String isilIslem,
            String yüzeySicakligi , String muayenebölgesindekialanSiddeti , String surFace , String isikcihaziTanimi , String kaldirmaTesti,
            String standartSapma, String muayeneTarih , String aciklamaveEkler,
-           String siraNo1 , String kpNo1 , String kuNo1, String kyNo1, String kal1, String c1, String ht1, String hy1, String s1,
-           String siraNo2 ,String kpNo2 , String kuNo2,String kyNo2,String kal2,String c2,String ht2,String hy2,String s2,
-           String siraNo3 ,String kpNo3 , String kuNo3,String kyNo3,String kal3,String c3,String ht3,String hy3,String s3,
-          String siraNo4 ,String kpNo4 ,String kuNo4,String kyNo4,String kal4,String c4,String ht4,String hy4,String s4,
-          String siraNo5 ,String kpNo5 ,String kuNo5,String kyNo5,String kal5,String c5,String ht5,String hy5,String s5,
+           String siraNo1 ,String kpNo1 ,String kuNo1,String kyNo1,String kal1,String c1,String ht1,String hy_1,String s1,
+           String siraNo2 ,String kpNo2 ,String kuNo2,String kyNo2,String kal2,String c2,String ht2,String hy2,String s2,
+           String siraNo3 ,String kpNo3 ,String kuNo3,String kyNo3,String kal3,String c3,String ht3,String hy3,String s3,
+           String siraNo4 ,String kpNo4 ,String kuNo4,String kyNo4,String kal4,String c4,String ht4,String hy4,String s4,
+           String siraNo5 ,String kpNo5 ,String kuNo5,String kyNo5,String kal5,String c5,String ht5,String hy5,String s5,
            String siraNo6 ,String kpNo6 ,String kuNo6,String kyNo6,String kal6,String c6,String ht6,String hy6,String s6,
-          String siraNo7 ,String kpNo7 , String kuNo7, String kyNo7, String kal7, String c7, String ht7, String hy7, String s7,
+           String siraNo7 ,String kpNo7 ,String kuNo7,String kyNo7,String kal7,String c7,String ht7,String hy7,String s7,
            String siraNo8 ,String kpNo8 ,String kuNo8,String kyNo8,String kal8,String c8,String ht8,String hy8,String s8,
-          String siraNo9 ,String kpNo9 ,String kuNo9,String kyNo9,String kal9,String c9,String ht9,String hy9,String s9,
-          String siraNo10 ,String kpNo10 ,String kuNo10,String kyNo10,String kal10,String c10,String ht10,String hy10,String s10,
-           String siraNo11 ,String kpNo11 ,String kuNo11, String kyNo11, String kal11,String c11,String ht11,String hy11,String s11,
-          String siraNo12 ,String kpNo12 ,String kuNo12,String kyNo12,String kal12,String c12,String ht12,String hy12,String s12,
-          String siraNo13 , String kpNo13 ,String kuNo13,String kyNo13,String kal13,String c13,String ht13,String hy13,String s13,
-          String siraNo14 ,String kpNo14 ,String kuNo14,String kyNo14, String kal14,String c14,String ht14,String hy14,String s14,
+           String siraNo9 ,String kpNo9 ,String kuNo9,String kyNo9,String kal9,String c9,String ht9,String hy9,String s9,
+           String siraNo10 ,String kpNo10 ,String kuNo10,String kyNo10,String kal10,String c10,String ht10,String hy10,String s10,
+           String siraNo11 ,String kpNo11 ,String kuNo11,String kyNo11,String kal11,String c11,String ht11,String hy11,String s11,
+           String siraNo12 ,String kpNo12 ,String kuNo12,String kyNo12,String kal12,String c12,String ht12,String hy12,String s12,
+           String siraNo13 ,String kpNo13 ,String kuNo13,String kyNo13,String kal13,String c13,String ht13,String hy13,String s13,
+           String siraNo14 ,String kpNo14 ,String kuNo14,String kyNo14,String kal14,String c14,String ht14,String hy14,String s14,
            String opAd, String deAd, String onAd, String opSeviye, String deSeviye, String onSeviye, String operatörTarih, String degerlendirenTarih, String onayTarih) 
             throws IOException  {
-             String dosyaAd = projeAd;
+             
             FileInputStream inputStream = new FileInputStream(new File("RaporExcell.xlsx"));
             
             XSSFWorkbook workbook = new XSSFWorkbook(inputStream); 
@@ -287,7 +287,7 @@ public class Export_Excell {
             cell7a.setCellStyle(style1);
             
             XSSFCell cell8a = row25.createCell(24);
-            cell8a.setCellValue(hy1);            
+            cell8a.setCellValue(hy_1);            
             cell8a.setCellStyle(style1);
             
             XSSFCell cell9a = row25.createCell(27);
@@ -610,9 +610,7 @@ public class Export_Excell {
             cell7j.setCellValue(ht10);            
             cell7j.setCellStyle(style1);
             
-            XSSFCell cell8j = row34.createCell(24);
-            cell8j.setCellValue(hy10);            
-            cell8j.setCellStyle(style1);
+           
             
             XSSFCell cell9j = row34.createCell(27);
             cell9j.setCellValue(s10);            
@@ -646,15 +644,13 @@ public class Export_Excell {
             cell7k.setCellValue(ht11);            
             cell7k.setCellStyle(style1);
             
-            XSSFCell cell8k = row35.createCell(24);
-            cell8k.setCellValue(hy11);            
-            cell8k.setCellStyle(style1);
+      
             
             XSSFCell cell9k = row35.createCell(27);
             cell9k.setCellValue(s11);            
             cell9k.setCellStyle(style1);
             
-            XSSFCell cell1l = row35.createCell(0);
+            XSSFCell cell1l = row36.createCell(0);
             cell1l.setCellValue(siraNo12);            
             cell1l.setCellStyle(style1);
             
@@ -682,10 +678,7 @@ public class Export_Excell {
             cell7l.setCellValue(ht12);            
             cell7l.setCellStyle(style1);
             
-            XSSFCell cell8l = row36.createCell(24);
-            cell8l.setCellValue(hy12);            
-            cell8l.setCellStyle(style1);
-           
+        
             XSSFCell cell9l = row36.createCell(27);
             cell9l.setCellValue(s12);            
             cell9l.setCellStyle(style1);
@@ -718,9 +711,7 @@ public class Export_Excell {
             cell7m.setCellValue(ht13);            
             cell7m.setCellStyle(style1);
             
-            XSSFCell cell8m = row37.createCell(24);
-            cell8m.setCellValue(hy13);            
-            cell8m.setCellStyle(style1);
+       
             
             XSSFCell cell9m = row37.createCell(27);
             cell9m.setCellValue(s13);            
@@ -754,9 +745,7 @@ public class Export_Excell {
             cell7n.setCellValue(ht14);            
             cell7n.setCellStyle(style1);
             
-            XSSFCell cell8n = row38.createCell(24);
-            cell8n.setCellValue(hy14);            
-            cell8n.setCellStyle(style1);
+         
             
             XSSFCell cell9n = row38.createCell(27);
             cell9n.setCellValue(s14);            
@@ -808,11 +797,11 @@ public class Export_Excell {
             
             inputStream.close();
  
-            FileOutputStream outputStream = new FileOutputStream("C:\\Users\\Toshiba\\Documents\\NetBeansProjects\\tersane\\"+raporNo+".xlsx");
+            FileOutputStream outputStream = new FileOutputStream("C:\\Users\\Toshiba\\Documents\\NetBeansProjects\\tersane\\ExcellRaporlar\\"+raporNo+".xlsx");
             workbook.write(outputStream);
             workbook.close();
             outputStream.close();
-            System.out.println("Excel written successfully");
+       
 
      
     

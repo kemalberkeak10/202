@@ -194,7 +194,7 @@
                                              <graphic>
                                                 <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
-                                                      <Image url="@app/icon/add.png" />
+                                                      <Image url="@app/icon/add%20(1).png" />
                                                    </image>
                                                 </ImageView>
                                              </graphic>

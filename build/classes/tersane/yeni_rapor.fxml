@@ -15,9 +15,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tersane.Yeni_raporController">
+<ScrollPane fx:id="scrollpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tersane.Yeni_raporController">
    <content>
-      <AnchorPane styleClass="fill-borderred" stylesheets="@app.tersane/newCascadeStyleSheet.css">
+      <AnchorPane fx:id="anchorpane" styleClass="fill-borderred" stylesheets="@app.tersane/newCascadeStyleSheet.css">
          <children>
             <HBox layoutY="-2.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
